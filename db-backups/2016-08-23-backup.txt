@@ -1,0 +1,600 @@
+#
+# TABLE STRUCTURE FOR: all_categories
+#
+
+DROP TABLE IF EXISTS `all_categories`;
+
+CREATE TABLE `all_categories` (
+  `all_categories_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cat_name` varchar(75) NOT NULL,
+  `slug_cat_name` varchar(75) NOT NULL,
+  PRIMARY KEY (`all_categories_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: all_subcategories
+#
+
+DROP TABLE IF EXISTS `all_subcategories`;
+
+CREATE TABLE `all_subcategories` (
+  `subcat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `head_category_id` int(11) NOT NULL,
+  `subcat_name` varchar(75) NOT NULL,
+  `slug_subcat_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`subcat_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: api_adrecord_stores_dump
+#
+
+DROP TABLE IF EXISTS `api_adrecord_stores_dump`;
+
+CREATE TABLE `api_adrecord_stores_dump` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `a_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `name` varchar(150) NOT NULL,
+  `url` varchar(250) NOT NULL,
+  `affiliate_url` varchar(150) NOT NULL,
+  `rabattkoder` tinyint(1) NOT NULL DEFAULT '1',
+  `slug` varchar(150) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `category` varchar(150) DEFAULT 'Övrigt',
+  `logo_src` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1142 DEFAULT CHARSET=latin1;
+
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('864', '13', '1', 'Svenska Alarm', 'http://www.svenskaalarm.se', '', '1', '', '', 'Säkerhet och trygghet', 'img/logos/d473ba2ce6c2d3471cb3d7291391ff6a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('865', '32', '1', 'Webbdo', 'http://www.webbdo.se/webbhotell/', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/7f624c83401f939d7c3a2d448ec43122.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('866', '38', '1', 'Taltips.se', 'http://www.taltips.se', '', '1', '', '', 'Tjänster', 'img/logos/3ab25e657d5d121bfd591fc41bed769f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('867', '43', '1', 'Blogvertiser', 'http://www.blogvertiser.com/sv/', '', '1', '', '', 'Blogging och social media', 'img/logos/3f2c5e213ee903a679ded589d293d360.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('868', '56', '1', 'Chokladbudet', 'http://www.chokladbudet.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/0d11d7ccf18c381c2f8ad42dbce44c25.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('869', '59', '1', 'Tieroom SE', 'http://www.tieroom.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/33e02a19791d3f8bfb46d59d8ebe1c3e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('870', '60', '1', 'Mshop', 'http://www.mshop.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/67701bbe8f063e42da3276eb9e8eaf48.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('871', '63', '1', 'Allt-fraktfritt.se', 'http://allt-fraktfritt.se', '', '1', '', '', 'Internetvaruhus', 'img/logos/f235d01a71f7dbc5ef94e597d26996ee.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('872', '70', '1', 'Upplevelse.com', 'http://www.upplevelse.com', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/1ec955a5db811537fc1b7a1c9cea6457.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('873', '71', '1', 'Ecoliving.se', 'http://www.ecoliving.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/680ebbb7494f48fd579a3e0970582558.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('874', '73', '1', 'Go for Life', 'http://www.goforlife.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/a1bc07b3e2e0e88e70323e93aa2d3382.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('875', '84', '1', 'Intimera', 'https://www.intimera.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/b93971ae0000fe940f058bd33e8695ea.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('876', '85', '1', 'iPhonebutiken.se', 'http://www.iphonebutiken.se', '', '1', '', '', 'Mobil', 'img/logos/124c218808b67d4c38a773617f6a6a8b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('877', '87', '1', 'Strumpgalen.se', 'http://www.strumpgalen.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/955070825a1a0ecde072cbee1f670c12.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('878', '90', '1', 'Bodyguard.nu', 'http://www.bodyguard.nu', '', '1', '', '', 'Säkerhet och trygghet', 'img/logos/904fe46bb672bbe81d1ca340fac90a60.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('879', '93', '1', 'Uttaget.se', 'http://www.uttaget.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/17562bca1fc632e91bcdf82394da3a0c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('880', '99', '1', 'FS Data', 'https://fsdata.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/1dc595d4c4a9989c0af710b729bdd3cd.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('881', '100', '1', 'MyHeart.se', 'http://www.myheart.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/b521370d30624281c57ee90ce7bef8d8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('882', '101', '1', 'Barnkalaset.se', 'http://www.barnkalaset.se', '', '1', '', '', NULL, 'img/logos/f415f92f46ceb8e0b0dd4dffa94aa91c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('883', '105', '1', 'Lensia', 'http://www.lensia.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/0126c19858ff821b91c836563a42fb1e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('884', '113', '1', 'Prime Scratch Cards', 'http://www.primescratchcards.com', '', '1', '', '', NULL, 'img/logos/b09105b3df7802a5b98c35cf0572b51d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('885', '120', '1', 'Adrecord', 'http://www.adrecord.com', '', '1', '', '', 'Tjänster', 'img/logos/772e5198e2b2841611a15292826f2daf.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('886', '121', '1', 'Sock Designers', 'http://www.sockdesigners.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/4017a5af70ae1e0822c654849033897b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('887', '125', '1', 'Vitapost.se', 'http://www.vitapost.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/25794fab24eba6d415861c02a8414c11.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('888', '128', '1', 'Rimstone Interiör & Designlagret', 'http://www.interiordesignlagret.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/665bd5f0644c1004e0cf107607dc7e5a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('889', '130', '1', 'Megashop', 'http://www.megashop.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/b0ff720b73f75c16f446ece860f22f19.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('890', '135', '1', 'Resebokningen.se', 'http://www.resebokningen.se', '', '1', '', '', 'Resor', 'img/logos/8a776f4ecc8bf094187272cada2bde60.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('891', '136', '1', 'MattConcept.se', 'http://www.mattconcept.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/784fcf22620f066a1058fd65472be54c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('892', '142', '1', 'Fungadgets.se', 'http://www.fungadgets.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/65b0aebaa3d476cd607df3dba24a4ec0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('893', '144', '1', 'Nalleriet.se', 'http://www.nalleriet.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/3a890f1cec474dd70f56753aa5e987a9.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('894', '147', '1', 'Room99', 'http://room99.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/0dfb0ab9b113d2a1eea910836b9ad00f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('895', '152', '1', 'StylingAgenten.se', 'http://www.stylingagenten.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/75c1a7d9011900a274441ce9ddd7c7d6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('896', '153', '1', 'Pen Store SE', 'http://www.penstore.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/357b539f25b603c0d13629c60f41a13a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('897', '158', '1', 'Prime Slots', 'http://www.primeslots.com', '', '1', '', '', NULL, 'img/logos/c80266f2787955c046a6ea5dc38ea9c6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('898', '159', '1', 'LevHemma.se', 'http://www.levhemma.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/a5a72bf6b3af765749da6e7e74d658c8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('899', '164', '1', 'Lilon.se', 'http://www.lilon.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/d20e8b6669afa6c6c5329e9c82c57596.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('900', '172', '1', 'Kilands mattor', 'http://www.kilandsmattor.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/4dacb7f0383c7c72cbd19496956d860f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('901', '173', '1', 'Expofy', 'http://www.expofy.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/00a988a6f095fece4d689c64d92c3d0e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('902', '175', '1', 'Lastbryggan', 'https://www.lastbryggan.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/42855fff51c461b95ec5479bedf44bb2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('903', '179', '1', 'Smartbudget', 'http://www.smartbudget.se', '', '1', '', '', 'Ekonomi', 'img/logos/ec588f5f50470036c06a461af83a1c98.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('904', '180', '1', 'Gents', 'https://www.gents.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/4f0db793cc24c4b4f2ec6c8932a73184.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('905', '182', '1', 'Trendystuff.se', 'http://www.trendystuff.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/a17310155824fd0b228da9a6d0bdcfae.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('906', '190', '1', 'Lash.se', 'http://www.lash.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/fdd55648ab6e309b1dc9bfdb630e42ea.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('907', '192', '1', 'KidsBrandStore.se', 'https://kidsbrandstore.se', '', '1', '', '', NULL, 'img/logos/e1808021275702bcbc8189b21afe6132.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('908', '193', '1', 'Roliga Prylar', 'http://www.roligaprylar.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/109193fc21551179fb30d8f485e6121f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('909', '194', '1', 'Kontorsgiganten.se', 'http://www.kontorsgiganten.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/e6223e4a6dcb9e36fa323580590eb86c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('910', '196', '1', 'Wowallets', 'http://www.wowallets.com', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/20a19ec85eb65acde61be033f58ccffe.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('911', '197', '1', 'Presenteriet.se', 'http://www.presenteriet.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/d9a07909e5a786c5a18d7f9b0b23f758.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('912', '198', '1', 'Partykungen.se', 'https://www.partykungen.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/35e4a7decb1a26f66b3f2fa81bc8bb78.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('913', '201', '1', 'Letsdeal.se', 'http://www.letsdeal.se', '', '1', '', '', 'Internetvaruhus', 'img/logos/d30a7a0c5b142b6b2776688aa27a34ed.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('914', '202', '1', 'Brallis.se', 'http://www.brallis.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/1c6250a107ba95496e542b4a8fb01adb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('915', '203', '1', 'TheMobileStore.se', 'http://www.themobilestore.se', '', '1', '', '', 'Mobil', 'img/logos/151fac1f64acb99197ad5d9e05cdabc9.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('916', '213', '1', 'Supercat.se', 'http://www.supercat.se', '', '1', '', '', 'Djur', 'img/logos/fab3e6e791c0a57fd0665f2f89db03cd.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('917', '214', '1', 'Pälsmössa.se', 'http://www.pälsmössa.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/a5915599d13b79fd75665bc5d5065965.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('918', '215', '1', 'Patroner.se', 'http://www.patroner.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/110544a99394654cf986f436ef4ad125.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('919', '223', '1', 'Bianco Footwear', 'http://www.bianco.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/30906c5ad635517c2adf7ed660240f0f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('920', '230', '1', 'Shirtstore', 'http://www.shirtstore.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/cbcac240d4224a190dbae1808fd6504c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('921', '231', '1', 'Spelbord.se', 'http://www.spelbord.se', '', '1', '', '', 'Sport och fritid', 'img/logos/b504fc8c69ff16a901d41e72f143bc39.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('922', '233', '1', 'Lustjakt', 'http://lustjakt.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/4b8a923ff3d6cbcc6d3635d24f001d04.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('923', '234', '1', 'HemByte.nu', 'http://www.hembyte.nu', '', '1', '', '', 'Resor', 'img/logos/e7d1c8a447022681ad19fd5098619c4c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('924', '236', '1', 'TT-Line', 'https://www.ttline.com/sv/passagerare/', '', '1', '', '', 'Resor', 'img/logos/be8a2ffa27576078ccf93ec0850ac246.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('925', '238', '1', 'Supporterprylar.se', 'http://www.supporterprylar.se', '', '1', '', '', 'Sport och fritid', 'img/logos/7376f90d315e67fc050b3385eb46b172.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('926', '239', '1', 'Supportersplace', 'http://www.supportersplace.com/se/', '', '1', '', '', 'Sport och fritid', 'img/logos/56206a21fceb8ec2e4e63316f17df4ec.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('927', '241', '1', 'Vuxen.se', 'http://www.vuxen.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/6a9540fd194d61a99cd092b13945d3ec.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('928', '242', '1', 'Doggie.se', 'http://www.doggie.se', '', '1', '', '', 'Djur', 'img/logos/e1d43c05b8fbbadd2238bcbc383a85ba.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('929', '245', '1', 'IQtestet.se', 'http://www.iqtestet.se', '', '1', '', '', 'Tjänster', 'img/logos/b1d901926e5c1c07870aadf1b503c2b4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('930', '247', '1', 'Spelexperten.com', 'http://www.spelexperten.com', '', '1', '', '', 'Sport och fritid', 'img/logos/2a6b171a40db62fb65620eb219e754a2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('931', '249', '1', 'Tonerlagret.se', 'http://www.tonerlagret.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/09c1f1125ee5cf98081158ccd3b0bc3d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('932', '250', '1', 'Badlust.se', 'http://www.badlust.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/bb4e9f759e2ab832b3e63cc451b4fe9d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('933', '252', '1', 'Kabelbutiken.com', 'http://www.kabelbutiken.com', '', '1', '', '', 'Elektronik och datorer', 'img/logos/980625bd012fc8f74a1eeb09e9f0a42a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('934', '255', '1', 'Majsans', 'http://www.majsans.com', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/5616a90b0ccef2628a368551a973472f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('935', '256', '1', 'Ledgiganten', 'http://www.ledgiganten.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/7deb49e96d2a1d3cc16eed74ffd92d3c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('936', '258', '1', 'Love Of Brands', 'http://www.loveofbrands.com/sv/', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/f397ea4a811d9be98c7918f11ff870a6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('937', '262', '1', 'Hatstore', 'http://hatstore.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/0131bdf4b70d6b141dda1cd251541a57.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('938', '264', '1', 'TampongShopen.se', 'http://www.tampongshopen.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/05291b1927d5ac5552e40b00ccc9a935.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('939', '265', '1', 'Swedish Beauty Factory', 'http://www.swedishbeautyfactory.com', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/c903d5fde84e0e1078de611ed505e4c2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('940', '270', '1', 'Mustang', 'http://www.mustang.se', '', '1', '', '', 'Sport och fritid', 'img/logos/4361c4cd3a51c0d030f0bad1920a0419.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('941', '273', '1', 'Prylmagasinet.se', 'http://prylmagasinet.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/2072731990eafa2d844a66a9e67ff715.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('942', '274', '1', 'Styleshop.se', 'http://www.styleshop.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/cecfca1753c125ddf0cb9adb873e089a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('943', '280', '1', 'Stonefactory', 'http://www.stonefactory.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/debb0573cef392c22ecca1e5051cbe6a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('944', '284', '1', 'Manky.se', 'http://www.manky.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/b6b330a7a2815d47c846fcd1b62d7cb1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('945', '285', '1', 'PetDesign.se', 'http://www.petdesign.se', '', '1', '', '', 'Djur', 'img/logos/4618e6aec1e31c97a76d6dea2eba0c4a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('946', '289', '1', 'Laitis', 'http://www.laitis.se', '', '1', '', '', 'Motor', 'img/logos/925e00a16569e31cdb5d45417618ade2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('947', '295', '1', 'Happy Plugs', 'http://www.happyplugs.com', '', '1', '', '', 'Elektronik och datorer', 'img/logos/e6710b458dad774dbba70713fb2852c3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('948', '296', '1', 'Furniturebox', 'http://www.furniturebox.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/77fb5b0a327c88ecb8f5530a6b5666f6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('949', '299', '1', 'Dunken.se', 'http://www.dunken.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/d393f9c0c0a63516b852c308af2d4150.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('950', '300', '1', 'Lekexperten', 'http://www.lekexperten.se', '', '1', '', '', NULL, 'img/logos/8936e22ba3930e49843e61dc89088e82.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('951', '301', '1', 'Mobian', 'http://www.mobian.se', '', '1', '', '', 'Mobil', 'img/logos/72b7d5ba455d68c54dcc60c253e545c0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('952', '302', '1', 'Vitaminbutiken Kenkou ', 'http://www.vitaminbutiken.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/821973b6a894ef9453f62fcea6717ac8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('953', '303', '1', 'Evas Underkläder', 'http://www.evasunderklader.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/2ecc6f4313434e6953b7eb950998f2ec.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('954', '311', '1', 'Butik21.com', 'http://www.butik21.com', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/3f619e69d081958773b98a160a028dac.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('955', '313', '1', 'Foderboxen', 'http://www.foderboxen.se', '', '1', '', '', 'Djur', 'img/logos/3792f7c741ed849ab479f4487d053ffa.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('956', '318', '1', 'Pongo.se', 'http://www.pongo.se', '', '1', '', '', 'Djur', 'img/logos/726a48ee3d7568f5803af7bb02bb3256.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('957', '324', '1', 'Träningspartner', 'http://traningspartner.se', '', '1', '', '', 'Sport och fritid', 'img/logos/07e52a89519350fb8562656aa2ef513c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('958', '329', '1', 'SkalHuset.se', 'http://www.skalhuset.se', '', '1', '', '', 'Mobil', 'img/logos/87a7613e633983206a867d3fafc8d041.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('959', '332', '1', 'Snyggunder.se', 'http://www.snyggunder.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/09dd81b52dc839da662a65f902b6de40.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('960', '333', '1', 'Lantbutiken.se', 'http://www.lantbutiken.se', '', '1', '', '', 'Djur', 'img/logos/c232d4652944c9c60d07c164e50362f3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('961', '336', '1', 'Shapy.se', 'http://www.shapy.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/fb9fa494c6845c1c304f3c3c6e09ca9b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('962', '341', '1', 'Vardia Försäkring', 'http://www.vardia.se', '', '1', '', '', 'Försäkringar', 'img/logos/5feb7bed03e38551fe58af306d84c15c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('963', '343', '1', 'byPM', 'http://bypm.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/6a4f54a09b6ecad85ab88fb7302a1d91.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('964', '344', '1', 'Getpersonal.se', 'http://www.getpersonal.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/15a4f70a2d4082b513440546c162bd6b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('965', '347', '1', 'Bobby Harper', 'http://www.bobbyharper.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/8142e9ac9a57398956b1686e5669ff72.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('966', '353', '1', 'Dentally', 'http://www.dentally.se/kampanj', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/e592c567ee0b896bfae6e831be06b880.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('967', '358', '1', 'InStyler', 'http://www.instyler.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/255802017df640dadffc887459e94c47.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('968', '360', '1', 'PHAX Swimwear', 'http://www.phaxswimwear.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/bb3f5d7638bbe93cb7ed84635accdf1b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('969', '362', '1', 'Gasello.com', 'http://www.gasello.com', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/a8c32a6ef6b7238e9665a64b24534423.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('970', '365', '1', 'Texstyle.se', 'http://texstyle.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/1be9cd26a9dd48760b44cc4480833c35.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('971', '367', '1', 'USAGODIS.SE', 'http://www.usagodis.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/6d641b43d2dde4665e5e182e9a025288.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('972', '370', '1', 'Sofia Moore', 'http://sofiamoore.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/ecbaa1c1b1b544e23a247e0f36622ea5.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('973', '375', '1', 'Akutbutiken.se', 'http://akutbutiken.se', '', '1', '', '', 'Säkerhet och trygghet', 'img/logos/d4d89c9369cd8c81d49e020634b09dc8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('974', '380', '1', 'Barahandtag.se', 'http://www.barahandtag.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/0ac6b2510f16e94fb33cdc594ca7136c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('975', '384', '1', 'Bloomify', 'http://www.bloomify.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/6ecb3a006eeea12aebb164b0f10a806f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('976', '394', '1', 'Gameday', 'http://gameday.se', '', '1', '', '', 'Sport och fritid', 'img/logos/7f7452e0f92c49c35e974956f6f5db80.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('977', '395', '1', 'Sortiment.se', 'http://sortiment.se', '', '1', '', '', 'Internetvaruhus', 'img/logos/0f187f208a7f09427a7802b7f65cbf60.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('978', '397', '1', 'Bravio', 'http://www.bravio.se', '', '1', '', '', 'Ekonomi', 'img/logos/31d624a4d65bb4528f1abd45ee797099.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('979', '407', '1', 'BaraBrillor.se', 'http://www.barabrillor.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/e107500fcd88a7659860d0c954b4954c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('980', '408', '1', 'ITsajten', 'http://www.itsajten.se', '', '1', '', '', 'Mobil', 'img/logos/4aca953762eae33e377f7cb1ce444e89.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('981', '415', '1', 'Min Häst', 'http://www.minhast.se', '', '1', '', '', 'Tidningar', 'img/logos/671bb7a8216b9e36cdcb90631d2d5be2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('982', '419', '1', 'BGA Fotobutik', 'http://www.bgafotobutik.se', '', '1', '', '', 'Foto och bild', 'img/logos/a40c3ff29a5e4a7430f2b13e309e6d56.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('983', '421', '1', 'Confident Living', 'http://confidentliving.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/2a974dcfd16c117af8fa9b634c263270.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('984', '422', '1', 'NewHeaven.se', 'http://www.newheaven.se', '', '1', '', '', NULL, 'img/logos/3f57c6e7e94df744ea0d0757eb156a52.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('985', '425', '1', 'PrintonDirect', 'http://www.printondirect.com', '', '1', '', '', 'Kontor och företagande', 'img/logos/c5a93c46a5ed16123637a71c721bd685.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('986', '427', '1', 'Joyland', 'https://www.joyland.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/7225ecf6de2178f6c30a4d04cec8d171.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('987', '428', '1', 'Mobiman', 'http://www.mobiman.se', '', '1', '', '', 'Mobil', 'img/logos/ceaa6b61566e61983576d7cca53fa4ca.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('988', '430', '1', 'Need4accessories', 'http://need4accessories.com', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/f5b853cb9dbc5ea357b0b901741676de.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('989', '437', '1', 'Grön Gåva', 'https://grongava.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/61d83e164affb035b3f4a49727f6ac69.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('990', '439', '1', 'AmericanPopcorn.se', 'http://www.americanpopcorn.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/c7136e99a56e2b96264810adf73f612b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('991', '440', '1', 'Rebel Walls', 'http://rebelwalls.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/67616dd3b4341c4ae58d657bb8677451.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('992', '441', '1', 'Herrväskor.se', 'http://www.herrväskor.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/e503021c8795621889f50d53305e1812.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('993', '442', '1', 'Lekogram.se', 'http://www.lekogram.se', '', '1', '', '', NULL, 'img/logos/e8878d071c96d6f09c394a5e56b2b101.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('994', '445', '1', 'Naturalbox', 'http://naturalbox.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/864c0fcde75b3bae1bc84c557d5b6ef4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('995', '448', '1', 'Godisboxen.se', 'http://www.godisboxen.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/797902a64b6f31445f1813d75e45ffec.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('996', '449', '1', 'Parfymonline.se', 'http://www.parfymonline.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/459d5f791a40125ba3e51eb139fc8381.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('997', '451', '1', 'https.se', 'https://https.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/0083d624940e3e379af38675542f657e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('998', '453', '1', 'Ventilationsfilter.net', 'http://www.ventilationsfilter.net', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/acb641d42404c8d7df9f1a169e7e299d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('999', '456', '1', 'Modekungen', 'http://www.modekungen.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/9084262d21b16a959275cb84b5ca638c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1000', '458', '1', 'USBgrossisten', 'http://www.usbgrossisten.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/e69237660d1d8d99b144b8583a759e6f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1001', '460', '1', 'Malmö Outdoor & Sports', 'http://malmooutdoor.se', '', '1', '', '', 'Sport och fritid', 'img/logos/378c91954a51e0472af5afb2c0e319dc.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1002', '462', '1', 'Nannynu!', 'http://www.nanny.nu', '', '1', '', '', NULL, 'img/logos/1769aaf64bb36200b28a27e8024a151e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1003', '466', '1', 'Sejdelshoppen.se', 'http://www.sejdelshoppen.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/a615ab12f5596b441b91f6bc65cf2285.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1004', '467', '1', 'Himmelriket', 'http://www.himmelriket.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/58b03dafd6ceca3fed22603e261b7717.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1005', '469', '1', 'Klockkungarna.se', 'http://www.klockkungarna.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/a4ca4627b4daab0c530d328d1a8c34c3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1006', '470', '1', 'Secrets.se', 'http://www.secrets.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/e297b0a8696dfc22a4fa3160cf779839.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1007', '472', '1', 'ELIQ', 'http://www.eliq.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/0d69f7e283dfd20a0299a30a02597333.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1008', '474', '1', 'Photowall', 'http://www.photowall.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/990ea027de231c728415152208e73303.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1009', '475', '1', 'Korsetten.se', 'http://www.korsetten.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/2a9c37bd8f71fc659a649f7217649920.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1010', '476', '1', 'Inleed Webbhotell', 'https://www.inleed.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/734dafc7f1fe416505f5d907ec502303.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1011', '481', '1', 'Marinestyle.se', 'http://www.marinestyle.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/f76c619af4be951cf8d68cf8d609577c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1012', '484', '1', 'Teknikdelar.se', 'http://www.teknikdelar.se', '', '1', '', '', 'Mobil', 'img/logos/2219ab5a98ef16354f270a6f5e5820e3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1013', '485', '1', 'D7.se', 'http://www.d7.se', '', '1', '', '', 'Internetvaruhus', 'img/logos/380cd9c576806958a932db81e8087a9d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1014', '489', '1', 'Sportgymbutiken', 'https://www.sportgymbutiken.se', '', '1', '', '', 'Sport och fritid', 'img/logos/f30463da9d3c9cf70cecace8b713b6ae.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1015', '490', '1', 'Mazily', 'https://www.mazily.se', '', '1', '', '', 'Tjänster', 'img/logos/6c4289bc7111d9745b726cdb057df9b8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1016', '493', '1', 'Stilrenaklockor.se', 'http://stilrenaklockor.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/fdafe0aa1e6a74025877fff04d1c7635.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1017', '494', '1', 'Creditum', 'http://www.creditum.se', '', '1', '', '', 'Ekonomi', 'img/logos/d87c99bb809a215d8b68b850ee57cb9d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1018', '496', '1', 'Kondomtorget', 'http://www.kondomtorget.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/a5ada04c284089c7760e8f12497ed64e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1019', '498', '1', 'Oliver & Eva', 'http://www.oliverocheva.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/81d18f24bac8c3e476d1e721c792a284.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1020', '502', '1', 'Tasspass', 'https://tasspass.se', '', '1', '', '', 'Djur', 'img/logos/0d1a3bf2d62da597d3430f0f310c3440.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1021', '503', '1', 'Happicovers', 'http://www.happicovers.com', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/14410dc4675519ef633de115d9e91e65.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1022', '504', '1', 'Mt. Manor', 'http://www.mtmanor.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/20411bb10601c2bfe43981359a12407b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1023', '505', '1', 'Bilstart', 'http://www.bilstart.se', '', '1', '', '', 'Motor', 'img/logos/f06d12f52aeba9d9c7982da747c22f0d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1024', '509', '1', 'Smink.net', 'http://www.smink.net', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/eadd2c4bc5bb32e27c0ca40f4675ad52.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1025', '510', '1', 'Hemsjön', 'http://hemsjon.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/fc2ea6b98a3c7b95e7890c5d3dd7d26b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1026', '514', '1', 'Seven Star', 'https://7star.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/6e92aabed29f152238495aa7f9b7b1fb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1027', '515', '1', 'ZooZoo.com', 'http://zoozoo.se', '', '1', '', '', 'Djur', 'img/logos/478667945c3e058f8dc47da43e718411.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1028', '521', '1', 'Thorn', 'https://cashloan.thorn.se/', '', '1', '', '', 'Ekonomi', 'img/logos/bfe6f5351b2a87c4774b740383c589fe.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1029', '522', '1', 'L\'EASY', 'https://cashloan.leasy.se', '', '1', '', '', 'Ekonomi', 'img/logos/d0a47f1a3a7740e8cebb9adee4146605.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1030', '527', '1', 'Headler', 'http://www.headler.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/d3c9bc3b67944ca2a4972dcf57cfbaf8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1031', '528', '1', 'Vinguiden.com', 'http://www.vinguiden.com', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/f292f0c703b1e5dd598ec96b04bc3d6c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1032', '529', '1', 'Mitt plagg', 'http://www.mittplagg.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/e5b3db3048eb8af6a60cd4ddbb0a95bf.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1033', '530', '1', 'Alltid', 'http://alltid.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/0447c4012856cd452f2e0616cf2527a8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1034', '535', '1', 'Batteriexperten SE', 'https://www.batteriexperten.com', '', '1', '', '', 'Elektronik och datorer', 'img/logos/3a2413f1f9b0ea1e973608ae4de33758.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1035', '536', '1', 'Animail SE', 'https://animail.se', '', '1', '', '', 'Djur', 'img/logos/18c75051dabf17d281fca2d511de25f4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1036', '541', '1', 'Tessard', 'http://www.tessard.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/f49b281e4293dada04c733b8d4003b7b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1037', '542', '1', 'Hästia', 'http://www.hastia.se', '', '1', '', '', 'Djur', 'img/logos/1ebd4fd8889c5316d5ef0697a58811ba.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1038', '544', '1', 'KINO Shop', 'http://www.kinoshopping.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/5d59a5a3c67c1bb0e443ba395b9bb5ef.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1039', '546', '1', 'Yoddla', 'http://www.yoddla.com', '', '1', '', '', 'Kontor och företagande', 'img/logos/e67e3715d986155008e930adbc2d8735.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1040', '547', '1', 'Loh Electronics', 'http://www.lohelectronics.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/c3a315e67d771dfd8e91b530b420eb42.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1041', '549', '1', 'Enerfy Driving', 'http://enerfydriving.se', '', '1', '', '', 'Motor', 'img/logos/a82bb2094cf4a86226c9532adb7b84aa.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1042', '550', '1', 'Kutts', 'http://www.kutts.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/320439c6dfe7fdb5f100ec853266485d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1043', '552', '1', 'KreditIdag', 'http://www.kreditidag.se', '', '1', '', '', 'Ekonomi', 'img/logos/77e317e91857e08ee2991ee1bfe5e5ca.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1044', '557', '1', 'Get Active', 'http://getactive.nu', '', '1', '', '', 'Sport och fritid', 'img/logos/a22307ad2d952a69e292afde2e871416.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1045', '561', '1', 'Nordic Deluxe', 'http://nordicdeluxe.dk/sv/', '', '1', '', '', 'Vuxenbutiker', 'img/logos/1543f7d687b11c6264adda4437777c6a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1046', '562', '1', 'Meebox SE', 'https://meebox.net/sv/', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/799ba7a9307a990ec393197b043249a1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1047', '563', '1', 'OVPN', 'https://www.ovpn.se', '', '1', '', '', 'Säkerhet och trygghet', 'img/logos/25f698cb311c2d3e04e98437a79922f3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1048', '565', '1', 'SkickaTårta.se', 'http://www.skickatarta.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/a1544fa14362aaac652644984f14b8bd.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1049', '568', '1', 'Easylover.se', 'http://www.easylover.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/996b1101748db98de344a352e6e350a4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1050', '569', '1', 'Saprema', 'http://www.saprema.se', '', '1', '', '', 'Sport och fritid', 'img/logos/ea71f6f755f9ad1d0f6b95ea28267ae3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1051', '570', '1', 'Kontoret.se', 'http://www.kontoret.se', '', '1', '', '', 'Kontor och företagande', 'img/logos/198c48c12c5483b32709b6eacbeaccd4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1052', '571', '1', 'Sinful.se', 'http://www.sinful.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/d2085beda6a36943b3d5ef6f99e850fb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1053', '572', '1', 'Taysta', 'http://www.taysta.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/a42b92fa04945b0f0708ea2be5aeaeb8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1054', '574', '1', 'SexleksakerOutlet.se', 'http://www.sexleksakeroutlet.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/a2510edb52c1fe0a781db7a1e758f1f6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1055', '575', '1', 'Maddii', 'http://www.maddii.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/aecccf8ea4c3ad8a7f510feae493a408.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1056', '576', '1', 'Ginos.se', 'http://www.ginos.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/e3b38c40f975078289964221528e79a1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1057', '577', '1', 'Klubbkompis', 'http://www.klubbkompis.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/89efb3bdaaf16c4bbf48c2fe2276006e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1058', '578', '1', 'Ostogram', 'http://www.ostogram.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/822449f3314c9dee67a813e72c432570.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1059', '580', '1', 'Tårtdekoration.com', 'http://www.tartdekoration.com', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/42887c72ed5334f1a9a48ffced9e7c97.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1060', '581', '1', 'Kortio', 'https://www.kortio.se', '', '1', '', '', 'Ekonomi', 'img/logos/70dfc5c56c2fd87a506c3d28c7be535f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1061', '582', '1', 'Namnband.se', 'http://namnband.se', '', '1', '', '', NULL, 'img/logos/1a8c4835454ecd0cf8b829c1fcefa5e0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1062', '583', '1', 'Björn Borg SE', 'http://www.bjornborg.com/se/', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/3b03dbbc59bc0bce1e36b5a0a936bc92.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1063', '584', '1', 'Kattkompaniet', 'http://www.kattkompaniet.nu', '', '1', '', '', 'Djur', 'img/logos/6ccd65d18d27b1f0e00b5d5b1998d55d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1064', '585', '1', 'Söderströms', 'http://soderstroms.nu', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/10363f0392531e29aa3f22a62e4ac9df.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1065', '586', '1', 'Black-snow.se', 'http://black-snow.se', '', '1', '', '', 'Sport och fritid', 'img/logos/29bf19cc30ae5d1f0e29918e1d499cdd.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1066', '587', '1', 'GuldGiganten', 'http://guldgiganten.se', '', '1', '', '', 'Ekonomi', 'img/logos/31020cc48c0e4a0fffdffa1febf9579e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1067', '588', '1', 'Plickoplock.se', 'http://www.plickoplock.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/eeba6977dff891db5a5112a7ba57dcc9.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1068', '590', '1', 'Proteinbolaget', 'http://www.proteinbolaget.se', '', '1', '', '', 'Sport och fritid', 'img/logos/cfbfe089ad4072795bc0728c4a22d5d7.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1069', '591', '1', 'Rite.se', 'http://www.rite.se', '', '1', '', '', 'Sport och fritid', 'img/logos/28ce311745643a4a6ee8cb1b3f98cb82.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1070', '593', '1', 'Golvpoolen', 'https://www.golvpoolen.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/28cb322b34b7454ba914bb8ec7633c47.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1071', '594', '1', 'Vesterålens Naturprodukter', 'https://vnp.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/fb65fc52a2f0505230cb696eee05bc7b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1072', '595', '1', 'Svenskt Kosttillskott', 'http://www.svensktkosttillskott.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/c9bd643a5f4fa3df87335c2ebeca2a2b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1073', '597', '1', 'Glamazon.se', 'http://www.glamazon.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/c4d309d872e44219ffa26809c914f8e4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1074', '598', '1', 'Axo Finans', 'https://www.axofinans.se', '', '1', '', '', 'Ekonomi', 'img/logos/10c567a3a5b5ec56d8b56f84021eecc2.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1075', '599', '1', 'Din Studio', 'http://www.dinstudio.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/dbf43ce61dc77f8402500138a857f898.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1076', '600', '1', 'BeautyNet.se', 'http://beautynet.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/1c954d20b2c8ad3a5a1bf8429eabbceb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1077', '602', '1', 'Svensk Hälsokost', 'http://www.svenskhalsokost.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/d27ebc1256f081afe4d13a71007da908.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1078', '603', '1', 'Poppsan', 'http://www.poppsan.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/5b8086d0cb8dc0ce469862f905b854ec.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1079', '604', '1', 'Prylstaden', 'http://www.prylstaden.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/3ada1af23da33f74c9896480c49c47a9.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1080', '605', '1', 'Fitnessbutiken', 'http://www.fitnessbutiken.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/73ad53ff1a2f7af176cc520b4cf564a5.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1081', '606', '1', 'Hyradirekt', 'https://hyradirekt.se', '', '1', '', '', 'Tjänster', 'img/logos/2c564b0c7dd3fdaef78e89fe02bbe194.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1082', '608', '1', 'Lyckas med mat', 'http://www.lyckasmedmat.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/352ae21cabac2ff75855007670282a90.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1083', '612', '1', 'Nstore', 'http://www.nstore.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/f07b3e7a8da3243957c3c6c8b061ab93.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1084', '613', '1', 'Daily Sports', 'http://www.dailysports.se', '', '1', '', '', 'Sport och fritid', 'img/logos/b7e0021ccc19bef4382d377f85f9bd39.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1085', '615', '1', 'Paapi', 'http://www.paapi.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/0e8bf766f9f93a118412220ddc8799ba.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1086', '619', '1', 'Xwine.se', 'http://www.xwine.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/3d76ab1b4528153449ec260d1dcc1fa3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1087', '620', '1', 'Slipskungen', 'http://www.slipskungen.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/82beb4e3d9c2963db8bdca745d96e8e0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1088', '621', '1', 'Alldo.se', 'https://www.alldo.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/1cb247ad570a3e0c5c9d76c45f16ecb0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1089', '622', '1', 'Plusbok.se', 'http://www.plusbok.se', '', '1', '', '', 'Böcker', 'img/logos/a50528442857ade9dd90abcb5dffe7f0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1090', '625', '1', 'Efva Attling', 'http://www.efvaattling.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/233da8d9ade827072a5cc1463aa0d227.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1091', '626', '1', 'Trendrum', 'http://www.trendrum.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/cf19dda2e983119a02c3ed254c57437f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1092', '627', '1', 'Hemfint.se', 'http://www.hemfint.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/39ec111ef69377f843dfc3fc825766a0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1093', '628', '1', 'Skapamer.se', 'http://www.skapamer.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/cdfd0701944346a51aae72664b30d8b0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1094', '629', '1', 'Zingland.se', 'http://www.zingland.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/27d6f4dbb9b8afce987bc16742824298.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1095', '630', '1', 'Intima.se', 'http://www.intima.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/adfa524b9f6181ee8668f8eaeac1eb07.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1096', '632', '1', 'Savelend', 'https://savelend.se', '', '1', '', '', 'Ekonomi', 'img/logos/af76f7cac892ef7816429312f4f9db42.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1097', '633', '1', 'SLIQHAQ', 'http://www.sliqhaq.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/4fba7c072174eb5f78e8b0ebb7f8e44d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1098', '634', '1', 'Qvicktime', 'http://www.qvicktime.eu', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/351d4ea12ebe8f191127bb26ab16b34c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1099', '635', '1', 'Invinitum', 'https://invinitum.com', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/8b73d9a3d1117b8e4adbaac4551878b7.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1100', '638', '1', 'Skistart', 'http://www.skistart.com/swe', '', '1', '', '', 'Sport och fritid', 'img/logos/66630aac322c13616d666390af71e366.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1101', '639', '1', 'Frystorkadmat.se', 'http://frystorkadmat.se', '', '1', '', '', 'Sport och fritid', 'img/logos/3f44625d4455daf0481de3a8093b6301.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1102', '640', '1', 'Climbing247', 'http://www.climbing247.se/se', '', '1', '', '', 'Sport och fritid', 'img/logos/30bc7b41ebb3bb6d76b490cef585fd86.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1103', '641', '1', 'MultiTriathlon', 'http://www.multitriathlon.se/sv', '', '1', '', '', 'Sport och fritid', 'img/logos/d5b9c0f098e648f0981e2290493fa960.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1104', '643', '1', 'Fina Mig', 'http://finamig.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/d69489cc1b524f724bc14a89a4ade47f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1105', '646', '1', 'Verktygshandlarn.se', 'http://www.verktygshandlarn.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/706aebb417573bc4969a8260ab072a75.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1106', '654', '1', 'Made4men.se', 'http://www.made4men.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/edf6b6571897ca2f9aadac6992ddbd1c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1107', '655', '1', 'Bio365.se', 'http://bio365.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/87d40d62396f63938b57c2d88a1c7acc.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1108', '658', '1', 'Doppresenter.se', 'http://www.doppresenter.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/6bf097d6b54397855c2eb7f8af87c640.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1109', '659', '1', 'Zale.se', 'http://www.zale.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/96dbae1cc653b82161dbbbbf52c1c42b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1110', '663', '1', 'WLTR', 'https://wltr.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/e9212739d1ce761ea7d4fe4fe9d530ce.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1111', '665', '1', 'Partyhallen.se', 'http://www.partyhallen.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/6e69467ec21c955ab3b8f483af7d51d3.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1112', '666', '1', 'My Beat', 'http://www.mybeat.se', '', '1', '', '', 'Mobil', 'img/logos/6fffe4a20ee1f9455f78bd67577d063d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1113', '667', '1', 'ITAB Outdoor', 'https://itaboutdoor.se', '', '1', '', '', 'Sport och fritid', 'img/logos/c253c928b78a4ac112a9dfcdb9084193.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1114', '669', '1', 'BestBroker', 'http://bestbroker.se', '', '1', '', '', 'Tjänster', 'img/logos/b5312cae5d4430c831bff31ac68c4a87.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1115', '676', '1', 'Twear.se', 'http://www.twear.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/dffdc92cab1e423ee27b8e20b2087ab9.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1116', '677', '1', 'One.com SE', 'https://www.one.com/sv/', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/49c5ebab96530f0c9617425edb7b0b9c.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1117', '681', '1', 'Sportsmart.se', 'http://sportsmart.se', '', '1', '', '', 'Sport och fritid', 'img/logos/a5d3e78b032c9dfb006a6e1c7da32d37.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1118', '688', '1', 'Fello', 'https://www.fello.se', '', '1', '', '', 'Mobil', 'img/logos/ed7989980bc0c89db0abab0ff65775eb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1119', '691', '1', 'Testagram', 'http://testagram.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/56224c2d53038eefd1b6141a83ab020f.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1120', '692', '1', 'Pysslandet.se', 'https://www.pysslandet.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/3ba6f6fed0664658140c26b08fbacc5b.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1121', '693', '1', 'Winkwink.se', 'http://www.winkwink.se', '', '1', '', '', 'Vuxenbutiker', 'img/logos/a35784feef5244db80d504fdb10be2bb.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1122', '694', '1', 'Pengino', 'https://www.pengino.se', '', '1', '', '', 'Ekonomi', 'img/logos/95030fc6525586f19defee2096a5bdc4.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1123', '698', '1', 'Cardoonia', 'https://se.cardoonia.com', '', '1', '', '', 'Sport och fritid', 'img/logos/9dbe34d8f1d9e3a3383dbad397fc0985.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1124', '699', '1', 'ABS Wheels', 'https://www.abswheels.se', '', '1', '', '', 'Motor', 'img/logos/0db7cd9cc65f0d73e2ea5b615e40ee39.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1125', '700', '1', 'Graviditetskollen.nu', 'http://www.graviditetskollen.nu', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/61f4d391b582404227836d671388bf4e.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1126', '701', '1', 'Lindströms Bad & Kakel', 'http://www.lindstromsbad.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/3a265d8009759b46000a99e1ce3c1621.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1127', '706', '1', 'Nordicbox.se', 'https://www.nordicbox.se', '', '1', '', '', 'Elektronik och datorer', 'img/logos/16561943b6734623c407e6f3df03bf8d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1128', '707', '1', 'Mechanum', 'http://www.mechanum.com', '', '1', '', '', 'Motor', 'img/logos/5eeef08670e90b2fce1a03ca355c1dda.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1129', '708', '1', 'EgenSajt', 'https://www.egensajt.se', '', '1', '', '', 'Webbhotell och hosting', 'img/logos/5f99a607e93d96a35efe2947270bd51a.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1130', '709', '1', 'Apotek365', 'http://www.apotek365.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/be47504bc0517714ca128856406da6b0.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1131', '712', '1', 'Megafynd.se', 'http://www.megafynd.se', '', '1', '', '', NULL, 'img/logos/5e07655b1f2a9f47c8a9799f08a17ef1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1132', '713', '1', 'The Sofa Store', 'https://www.thesofastore.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/51141d39bfe64861c02b0649ea81d13d.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1133', '714', '1', 'Hairsale.se', 'http://www.hairsale.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/978532f754cebd3a7a6d7a2cb2e47162.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1134', '715', '1', 'Fyndaljus.se', 'http://www.fyndaljus.se', '', '1', '', '', 'Hem, inredning och trädgård', 'img/logos/71f87a4f6c16c5755cfcf83da6004eb8.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1135', '724', '1', 'Exclusive Horsewear', 'http://exclusivehorsewear.com/sv/', '', '1', '', '', 'Djur', 'img/logos/71b4096caefcd11241af32a4e9cd25e1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1136', '727', '1', 'Reducero', 'https://www.reducero.se', '', '1', '', '', 'Ekonomi', 'img/logos/712217926134dce446238f2220c48df7.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1137', '728', '1', 'UC', 'https://www.minuc.se', '', '1', '', '', 'Säkerhet och trygghet', 'img/logos/3b577205e0db35c0e0bea94efcb5b4f1.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1138', '729', '1', 'Upplevelsepresent.se', 'http://www.upplevelsepresent.se', '', '1', '', '', 'Presenter och upplevelser', 'img/logos/5ee33b5f366951882e044554e9dcdbbc.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1139', '730', '1', 'NutriBox', 'http://www.nutribox.se', '', '1', '', '', 'Skönhet och hälsa', 'img/logos/ac98789e781cd3460cde50b2d3e7c3a6.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1140', '731', '1', 'Halebop', 'https://www.halebop.se', '', '1', '', '', 'Mobil', 'img/logos/348fafae9bbbb45f71cd5b456ab43621.jpg');
+INSERT INTO `api_adrecord_stores_dump` (`id`, `a_id`, `status`, `name`, `url`, `affiliate_url`, `rabattkoder`, `slug`, `title`, `category`, `logo_src`) VALUES ('1141', '732', '1', 'Frenchmix', 'http://www.frenchmix.se', '', '1', '', '', 'Kläder och accessoarer', 'img/logos/032026375ef42b317dc219281cff0d7a.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: api_logs
+#
+
+DROP TABLE IF EXISTS `api_logs`;
+
+CREATE TABLE `api_logs` (
+  `api_logs_id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` varchar(255) NOT NULL,
+  `message_from` text NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`api_logs_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `api_logs` (`api_logs_id`, `message`, `message_from`, `status`, `date`) VALUES ('2', 'Hämtningen av alla butiker lyckades. 278 butiker lades in', '[Adrecord] - Fetch Stores - klar', '1', '2016-08-22');
+
+
+#
+# TABLE STRUCTURE FOR: clicks
+#
+
+DROP TABLE IF EXISTS `clicks`;
+
+CREATE TABLE `clicks` (
+  `click_id` int(11) NOT NULL AUTO_INCREMENT,
+  `link_routing_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `ip` varchar(50) NOT NULL,
+  `epi` varchar(50) NOT NULL,
+  `time` datetime NOT NULL,
+  `week` int(1) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  PRIMARY KEY (`click_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: content
+#
+
+DROP TABLE IF EXISTS `content`;
+
+CREATE TABLE `content` (
+  `content_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lead_text` text NOT NULL,
+  `bottom_text` text NOT NULL,
+  PRIMARY KEY (`content_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: coupons
+#
+
+DROP TABLE IF EXISTS `coupons`;
+
+CREATE TABLE `coupons` (
+  `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `link_routing_id` int(11) NOT NULL,
+  `featured_home` int(11) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `end_date` date NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `text` text NOT NULL,
+  `type` varchar(10) NOT NULL DEFAULT 'coupon',
+  PRIMARY KEY (`coupon_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: header_data
+#
+
+DROP TABLE IF EXISTS `header_data`;
+
+CREATE TABLE `header_data` (
+  `header_data_id` int(11) NOT NULL AUTO_INCREMENT,
+  `meta_description` varchar(200) NOT NULL,
+  `meta_tags` varchar(200) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  PRIMARY KEY (`header_data_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: link_routing
+#
+
+DROP TABLE IF EXISTS `link_routing`;
+
+CREATE TABLE `link_routing` (
+  `link_routing_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `target_url` varchar(255) NOT NULL,
+  `epi` varchar(75) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `clicks` int(32) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`link_routing_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: offers
+#
+
+DROP TABLE IF EXISTS `offers`;
+
+CREATE TABLE `offers` (
+  `offer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `link_routing_id` int(11) NOT NULL,
+  `featured` tinyint(1) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `end_date` date NOT NULL,
+  `text` text NOT NULL,
+  `type` varchar(5) NOT NULL DEFAULT 'offer',
+  PRIMARY KEY (`offer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: sale_campaigns
+#
+
+DROP TABLE IF EXISTS `sale_campaigns`;
+
+CREATE TABLE `sale_campaigns` (
+  `sale_campaign_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `sale_page_id` int(11) NOT NULL,
+  `link_routing_id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `end_date` date NOT NULL,
+  `text` text NOT NULL,
+  `num_products` int(5) NOT NULL,
+  `type` varchar(50) NOT NULL DEFAULT 'sale',
+  PRIMARY KEY (`sale_campaign_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: sale_categories
+#
+
+DROP TABLE IF EXISTS `sale_categories`;
+
+CREATE TABLE `sale_categories` (
+  `sale_cat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `subcategory_id` int(11) NOT NULL,
+  PRIMARY KEY (`sale_cat_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: sale_page_content
+#
+
+DROP TABLE IF EXISTS `sale_page_content`;
+
+CREATE TABLE `sale_page_content` (
+  `sale_content_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lead_text` text NOT NULL,
+  `bottom_text` text NOT NULL,
+  PRIMARY KEY (`sale_content_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: sale_page_header
+#
+
+DROP TABLE IF EXISTS `sale_page_header`;
+
+CREATE TABLE `sale_page_header` (
+  `sale_page_header_id` int(11) NOT NULL AUTO_INCREMENT,
+  `meta_description` varchar(200) NOT NULL,
+  `meta_tags` varchar(200) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  PRIMARY KEY (`sale_page_header_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: sale_pages
+#
+
+DROP TABLE IF EXISTS `sale_pages`;
+
+CREATE TABLE `sale_pages` (
+  `sale_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content_id` int(11) NOT NULL,
+  `header_id` int(11) NOT NULL,
+  `nisch` varchar(25) NOT NULL,
+  PRIMARY KEY (`sale_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: slugs
+#
+
+DROP TABLE IF EXISTS `slugs`;
+
+CREATE TABLE `slugs` (
+  `slug_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `slug` varchar(50) NOT NULL,
+  `slug_category` varchar(25) NOT NULL,
+  PRIMARY KEY (`slug_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: store_categories
+#
+
+DROP TABLE IF EXISTS `store_categories`;
+
+CREATE TABLE `store_categories` (
+  `cat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `subcategory_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cat_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: stores
+#
+
+DROP TABLE IF EXISTS `stores`;
+
+CREATE TABLE `stores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link_routing_id` int(11) NOT NULL,
+  `content_id` int(11) NOT NULL,
+  `header_id` int(11) NOT NULL,
+  `online` tinyint(1) NOT NULL,
+  `featured` tinyint(1) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `updated` date NOT NULL,
+  `store_logo` varchar(150) NOT NULL,
+  `url` varchar(75) NOT NULL,
+  `coupons` tinyint(1) DEFAULT NULL,
+  `affiliate_link` varchar(250) NOT NULL,
+  `affiliate_img` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: subcategories
+#
+
+DROP TABLE IF EXISTS `subcategories`;
+
+CREATE TABLE `subcategories` (
+  `subcat_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `content_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: users
+#
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`) VALUES ('3', 'knatteante', '$2a$16$7q0iB1TjwR7MoA01wcEX4.Mu6hPsP5T2VdmKsebPG0/ayqdUoddSK', '', '');
+
+
