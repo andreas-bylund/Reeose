@@ -44,7 +44,7 @@
                         {
                             $button = '
                             <a href="' .base_url('ut/'.$row->link_routing_id.'').'" rel="nofollow">
-                              <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta rabattkod </button>
+                              <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta Rabattkod </button>
                             </a>';
                         }
                         if ($row->type == 'offer')
@@ -59,7 +59,7 @@
                         {
                             $button = '
                             <a id="ut" href="' .base_url('ut/'.$row->link_routing_id.'').'" rel="nofollow">
-                              <button onclick="return outFunction(' .$row->link_routing_id.')" type="button" class="btn btn-primary btn-lg btn-block"> Till rean </button>
+                              <button onclick="return outFunction(' .$row->link_routing_id.')" type="button" class="btn btn-primary btn-lg btn-block"> Till Rea </button>
                             </a>';
                         }
 

@@ -81,7 +81,7 @@
                                     </ul>
 
                                     <a href="' .base_url('ut/'.$row->link_routing_id.'').'" rel="nofollow">
-                                      <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta rabattkod </button>
+                                      <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta Rabattkod </button>
                                     </a>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                                     </ul>
 
                                     <a href="' .base_url('ut/'.$row->link_routing_id.'').'" rel="nofollow">
-                                      <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta rabattkod </button>
+                                      <button onclick="return outRabattkod('.$row->coupon_id.')"  type="button" class="btn btn-primary btn-lg btn-block"> Hämta Rabattkod </button>
                                     </a>
                                 </div>
                             </div>

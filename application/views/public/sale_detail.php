@@ -22,28 +22,13 @@
 
     $nothing = false;
 ?>
-<div class="breadcrumbs-v4">
+<div class="interactive-slider-v2" style="background-image: url(<?php echo base_url('assets/img/rea/gardiner.png'); ?>); background-size: cover; background-position: center center;">
 	<div class="container">
-		<h1>Billiga <?php echo $nisch; ?> - <small style="color:white;">Butiker som har REA på <?php echo $nisch; ?></small></h1>
-        <ul class="breadcrumb-v4-in">
-            <?php
-                 if (isset($category_data))
-                 {
-                     echo '<li><a href="'.base_url('rea').'">REA</a></li>';
-                     echo '<li><a href="'.base_url('rea/'.$category_data['cat_id']).'">'.$category_data['cat_id'].'</a></li>';
-
-                     echo '<li>'.$nisch.'</li>';
-                 }
-                 else
-                 {
-                     echo '<li><a href="'.base_url('rea').'">REA</a></li>';
-                     echo '<li>'.$nisch.'</li>';
-                 }
-             ?>
-		</ul>
-	</div><!--/end container-->
+		<h1>Billiga <?php echo $nisch; ?> <br> <small style="color:white;">Butiker som har REA på <?php echo $nisch; ?></small></h1>
+	</div>
 </div>
-<div class="content container">
+
+<div class="container content">
     <div class="row">
         <div class="col-md-9">
             <div class="filter-results">
@@ -58,8 +43,6 @@
                                 <div class="th-inner" style="text-align: center;"> <i class="fa fa-external-link-square"></i> TILL REA</div><div class="fht-cell"></div></th></tr>
                             </thead>
                         <tbody>';
-
-
 
                         foreach ($all_active_sale as $row)
                         {
@@ -96,8 +79,6 @@
                             </tr>';
                         }
 
-
-
                         echo '</tbody>
                     </table>';
 
@@ -117,7 +98,6 @@
                         </section>';
                     }
 
-
                     if (!empty($page_info->bottom_text)) {
                         echo '
 
@@ -127,11 +107,28 @@
                         ';
                     }
                  ?>
-
-
             </div>
         </div>
         <div class="col-md-3 filter-by-block md-margin-bottom-60">
+
+            <div class="panel-group" id="accordion-v3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul class="breadcrumb-v4-in" style="list-style-type: none; display: block; ">
+                            <?php
+                                 if (isset($category_data))
+                                 {
+                                     echo '<li><a href="'.base_url('rea').'">Rea</a> / <a href="'.base_url('rea/'.$category_data['cat_id']).'">'.ucfirst($category_data['cat_id']).'</a> / '.ucfirst($nisch).'</li>';
+                                 }
+                                 else
+                                 {
+                                     echo '<li><a href="'.base_url('rea').'">Rea</a> / '.ucfirst($nisch).'</li>';
+                                 }
+                             ?>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--/end panel group-->
 
             <?php
                 if(!empty($subcategories))
@@ -160,29 +157,29 @@
 
              ?>
 
-            <div class="panel-group" id="accordion-v3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-v3" href="#collapseThree">Populära butiker <i class="fa fa-angle-down"></i></a></h2>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <ul class="list-unstyled checkbox-list">
-                                <li class="coupong-list">Ellos</li>
-                                <li class="coupong-list">Nelly</li>
-                                <li class="coupong-list">Zalando</li>
-                                <li class="coupong-list">Nordicfeel</li>
-                                <li class="coupong-list">Bangerhead</li>
-                                <li class="coupong-list">Lekmer</li>
-                                <li class="coupong-list">Bubbleroom</li>
-                                <li class="coupong-list">Animail</li>
-                                <li class="coupong-list">MQ</li>
-                                <li class="coupong-list">Royal Design</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/end panel group-->
+             <div class="panel-group" id="accordion-v3">
+                 <div class="panel panel-default">
+                     <div class="panel-heading">
+                         <h2 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-v3" href="#collapseThree">Populära butiker <i class="fa fa-angle-down"></i></a></h2>
+                     </div>
+                     <div id="collapseThree" class="panel-collapse collapse in">
+                         <div class="panel-body">
+                             <ul class="list-unstyled checkbox-list">
+                                 <li class="coupong-list">Ellos</li>
+                                 <li class="coupong-list">Nelly</li>
+                                 <li class="coupong-list">Zalando</li>
+                                 <li class="coupong-list">Nordicfeel</li>
+                                 <li class="coupong-list">Bangerhead</li>
+                                 <li class="coupong-list">Lekmer</li>
+                                 <li class="coupong-list">Bubbleroom</li>
+                                 <li class="coupong-list">Animail</li>
+                                 <li class="coupong-list">MQ</li>
+                                 <li class="coupong-list">Royal Design</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div><!--/end panel group-->
 
 
         </div>

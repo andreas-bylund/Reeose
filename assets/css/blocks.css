@@ -3556,9 +3556,9 @@
   padding: 200px 0;
   position: relative;
   text-align: center;
-  background: url(../img/bg/18.jpg) no-repeat;
+  /*background: url(../img/bg/18.jpg) no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center center;*/
 }
 
 .interactive-slider-v2-md {

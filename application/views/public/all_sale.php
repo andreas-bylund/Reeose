@@ -5,10 +5,10 @@
 </div>
 
 <section>
-  <div class="container">
+  <div class="container content">
     <div class="row">
         <div class="col-md-12">
-            
+
             <p class="text-center" style="padding: 20px; border: dashed 1px #bbb;  margin: 40px 0px 40px 0px; vertical-align: middle; font-size: 20px; word-spacing: 12px;">
                 <a rel="nofollow" href="<?php echo base_url('rea#A');?>">A</a>
                 <a rel="nofollow" href="<?php echo base_url('rea#B');?>">B</a>

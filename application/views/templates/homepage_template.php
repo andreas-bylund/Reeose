@@ -23,7 +23,7 @@
 
     <!-- CSS Header and Footer -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/headers/header-v5.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/footers/footer-v4.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/footers/footer-v6.css'); ?>">
 
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/revolution-slider/rs-plugin/css/settings.css'); ?>">
 
@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/animate.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/line-icons/line-icons.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.css'); ?>">
-
 
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css'); ?>">
@@ -72,7 +71,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="<?php echo base_url('/'); ?>">
-							<img id="logo-header" src="<?php echo base_url('img/logo.png'); ?>" alt="Reeo.se logo">
+							<img id="logo-header" src="<?php echo base_url('img/logo.png'); ?>" alt="Reeo.se loggo">
 						</a>
 					</div>
 
@@ -117,8 +116,76 @@
 
             <?php echo $contents; ?>
     </div>
-    <div class="footer-v4">
+    <div class="footer-v6">
 
+        <div class="footer">
+				<div class="container">
+					<div class="row">
+						<!-- About Us -->
+						<div class="col-md-3 sm-margin-bottom-40">
+							<div class="heading-footer"><h2>About Unify</h2></div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit ut metus a commodo. Pellentesque congue tellus sed enim sollicitudin, id blandit mauris eleifend.</p>
+						</div>
+						<!-- End About Us -->
+
+						<!-- Recent News -->
+						<div class="col-md-3 sm-margin-bottom-40">
+							<div class="heading-footer"><h2>Recent News</h2></div>
+							<ul class="list-unstyled link-news">
+								<li>
+									<a href="#">Apple Conference</a>
+									<small>12 July, 2014</small>
+								</li>
+								<li>
+									<a href="#">Bootstrap Update</a>
+									<small>12 July, 2014</small>
+								</li>
+								<li>
+									<a href="#">Themeforest Templates</a>
+									<small>12 July, 2014</small>
+								</li>
+							</ul>
+						</div>
+						<!-- End Recent News -->
+
+						<!-- Useful Links -->
+						<div class="col-md-3 sm-margin-bottom-40">
+							<div class="heading-footer"><h2>Useful Links</h2></div>
+							<ul class="list-unstyled footer-link-list">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Portfolio</a></li>
+								<li><a href="#">Latest jobs</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Contact Us</a></li>
+							</ul>
+						</div>
+						<!-- End Useful Links -->
+
+						<!-- Contacts -->
+						<div class="col-md-3">
+							<div class="heading-footer"><h2>Contacts</h2></div>
+							<ul class="list-unstyled contacts">
+								<li>
+									<i class="radius-3x fa fa-map-marker"></i>
+									795 Folsom Ave, Suite 600,
+									San Francisco, CA 94107
+								</li>
+								<li>
+									<i class="radius-3x fa fa-phone"></i>
+									(+123) 456 7890<br>
+									(+123) 456 7891
+								</li>
+								<li>
+									<i class="radius-3x fa fa-globe"></i>
+									<a href="#">toronto@gmail.com</a><br>
+									<a href="#">www.toronto.com</a>
+								</li>
+							</ul>
+						</div>
+						<!-- End Contacts -->
+					</div>
+				</div><!--/container -->
+			</div>
 
 		<div class="copyright">
 			<div class="container">
@@ -144,8 +211,6 @@
     <script src="<?php echo base_url('assets/plugins/jquery/jquery-migrate.min.js'); ?>"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
-
     <!-- JS Implementing Plugins -->
     <script src="<?php echo base_url('assets/plugins/back-to-top.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/smoothScroll.js'); ?>"></script>
@@ -158,9 +223,6 @@
     <script src="<?php echo base_url('assets/js/plugins/revolution-slider.js'); ?>"></script>
 
     <script src="<?php echo base_url('assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js'); ?>"></script>
-
-
-
 
     <script src="<?php echo base_url('assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js'); ?>"></script>
 
