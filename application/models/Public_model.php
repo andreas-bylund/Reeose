@@ -696,6 +696,7 @@ class public_model extends CI_Model  {
         $this->db->select('
             sale_pages.nisch,
             sale_pages.sale_id,
+            sale_pages.header_img,
             sale_page_header.meta_description,
             sale_page_header.meta_tags,
             sale_page_header.title,

@@ -334,6 +334,24 @@ class Admin_controller extends CI_Controller {
         $this->load->model('admin_model');
         $today = date("Y-m-d");
 
+        //Ladda upp LOGON
+        $config['upload_path'] = './assets/img/rea';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '20000';
+		$config['max_width']  = '1600';
+		$config['max_height']  = '600';
+		$config['file_name'] = $this->random_string_generator();
+
+		$this->load->library('upload', $config);
+
+		//Error, något blev fel med bilden.
+		if (!$this->upload->do_upload('header_img'))
+		{
+			$error = array('error' => $this->upload->display_errors());
+
+			$this->template->load('templates/admin_template', 'admin/add_store', $error);
+		}
+
         //Header data
         $header_data = array(
             'title'             =>  $this->input->post('title'),
@@ -351,9 +369,10 @@ class Admin_controller extends CI_Controller {
         $content_data_id = $this->admin_model->add_data($content_data, 'sale_page_content');
 
         $sale_data = array(
-            'content_id'    => $content_data_id,
-            'nisch'         => $this->input->post('nisch'),
-            'header_id'     => $header_data_id
+            'content_id'    =>  $content_data_id,
+            'nisch'         =>  $this->input->post('nisch'),
+            'header_id'     =>  $header_data_id,
+            'header_img'    =>  $config['file_name']
         );
 
         $sale_page_id = $this->admin_model->add_data($sale_data, 'sale_pages');

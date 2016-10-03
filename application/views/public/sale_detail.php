@@ -21,8 +21,9 @@
     }
 
     $nothing = false;
+
 ?>
-<div class="interactive-slider-v2" style="background-image: url(<?php echo base_url('assets/img/rea/gardiner.png'); ?>); background-size: cover; background-position: center center;">
+<div class="interactive-slider-v2" style="background-image: url(<?php echo base_url('assets/img/rea/' . $page_info->header_img .'.png'); ?>); background-size: cover; background-position: center center;">
 	<div class="container">
 		<h1>Billiga <?php echo $nisch; ?> <br> <small style="color:white;">Butiker som har REA på <?php echo $nisch; ?></small></h1>
 	</div>
