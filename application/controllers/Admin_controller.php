@@ -118,14 +118,14 @@ class Admin_controller extends CI_Controller {
     }
 
     public function swe_characters($string)
-	{
-		$search = array('å', 'ä', 'ö');
-		$replace = array('a', 'a', 'o');
+  	{
+  		$search = array('å', 'ä', 'ö');
+  		$replace = array('a', 'a', 'o');
 
-		$string = str_replace($search, $replace, $string);
+  		$string = str_replace($search, $replace, $string);
 
-		return $string;
-	}
+  		return $string;
+  	}
 
     public function adrecord_handle_process()
     {
@@ -258,7 +258,7 @@ class Admin_controller extends CI_Controller {
         $this->template->load('templates/admin_template', 'admin/coupons_overview', $data);
     }
 
-    public function offer_overview()
+    /*public function offer_overview()
     {
         $this->load->model('admin_model');
 
@@ -268,8 +268,9 @@ class Admin_controller extends CI_Controller {
         $data['all_offers'] = $this->admin_model->overview_fetch_offers();
 
         $this->template->load('templates/admin_template', 'admin/offers_overview', $data);
-    }
+    }*/
 
+    /*
     public function edit_offer($offer_id)
     {
         $data['title'] = 'Ändra Erbjudanden';
@@ -312,7 +313,9 @@ class Admin_controller extends CI_Controller {
         $this->session->set_flashdata('msg', 'Erbjudandet är nu uppdaterad');
 
         redirect('admin/edit_offer/' . $this->input->post('offer_id'));
-    }
+    } */
+
+    /*
 
     public function add_sale_page()
     {
@@ -460,6 +463,8 @@ class Admin_controller extends CI_Controller {
         redirect('admin/add_sale_campaign');
     }
 
+
+
     public function add_offer()
     {
         $data['title'] = 'Nytt erbjudanden';
@@ -519,7 +524,7 @@ class Admin_controller extends CI_Controller {
         $this->session->set_flashdata('msg', 'Erbjudandet är nu tillagd');
 
         redirect('admin/add_offer');
-    }
+    } */
 
     public function add_coupon()
     {
@@ -752,6 +757,8 @@ class Admin_controller extends CI_Controller {
         redirect('admin/add_store');
     }
 
+    /*
+
     public function sale_overview()
     {
         $this->load->model('admin_model');
@@ -816,7 +823,7 @@ class Admin_controller extends CI_Controller {
         $this->session->set_flashdata('msg', 'Rabattkoden är nu uppdaterad');
 
         redirect('admin/edit_sale_page/' . $this->input->post('sale_campaign_id'));
-    }
+    } */
 
     public function edit_store($store_id)
     {

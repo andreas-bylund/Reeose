@@ -46,8 +46,8 @@ $route['admin/todo/uppdatera/:num'] = 'Admin_controller/update_uppdaterad_datum'
 /* Admin - Statiska sidor */
 $route['logout'] = 'Admin_controller/logout';
 $route['admin/index'] = 'Admin_controller/index';
-$route['admin/sale_overview'] = 'Admin_controller/sale_overview';
-$route['admin/offer_overview'] = 'Admin_controller/offer_overview';
+$route['admin/sale_overview'] = 'Admin_sale_controller/sale_overview';
+$route['admin/offer_overview'] = 'Admin_offer_controller/offer_overview';
 $route['admin/store_overview'] = 'Admin_controller/store_overview';
 $route['admin/coupons_overview'] = 'Admin_controller/coupons_overview';
 
@@ -60,12 +60,12 @@ $route['admin/api/logs'] = 'Admin_controller/api_logs';
 $route['admin/api/sale_logs'] = 'Admin_controller/sale_logs';
 
 /* Admin - Add sales */
-$route['admin/add_sale_page'] = 'Admin_controller/add_sale_page';
-$route['admin/add_sale_page_process'] = 'Admin_controller/add_sale_page_process';
+$route['admin/add_sale_page'] = 'Admin_sale_controller/add_sale_page';
+$route['admin/add_sale_page_process'] = 'Admin_sale_controller/add_sale_page_process';
 
 /* Admin - Add sale campain */
-$route['admin/add_sale_campaign'] = 'Admin_controller/add_sale_campaign';
-$route['admin/add_sale_campaign_process'] = 'Admin_controller/add_sale_campaign_process';
+$route['admin/add_sale_campaign'] = 'Admin_sale_controller/add_sale_campaign';
+$route['admin/add_sale_campaign_process'] = 'Admin_sale_controller/add_sale_campaign_process';
 
 /* Admin - Add store campaign */
 $route['admin/add_store'] = 'Admin_controller/add_store';
@@ -88,20 +88,20 @@ $route['admin/add_coupon'] = 'Admin_controller/add_coupon';
 $route['admin/add_coupon_process'] = 'Admin_controller/add_coupon_process';
 
 /* Admin - Add offer */
-$route['admin/add_offer'] = 'Admin_controller/add_offer';
-$route['admin/add_offer_process'] = 'Admin_controller/add_offer_process';
+$route['admin/add_offer'] = 'Admin_offer_controller/add_offer';
+$route['admin/add_offer_process'] = 'Admin_offer_controller/add_offer_process';
 
 /* Admin - Edit coupon */
 $route['admin/edit_coupon/(:any)'] = 'Admin_controller/edit_coupon/$1';
 $route['admin/edit_coupon_process'] = 'Admin_controller/edit_coupon_process';
 
 /* Admin - Edit offer */
-$route['admin/edit_offer/(:any)'] = 'Admin_controller/edit_offer/$1';
-$route['admin/edit_offer_process'] = 'Admin_controller/edit_offer_process';
+$route['admin/edit_offer/(:any)'] = 'Admin_offer_controller/edit_offer/$1';
+$route['admin/edit_offer_process'] = 'Admin_offer_controller/edit_offer_process';
 
 /* Admin - Edit Sale page */
-$route['admin/edit_sale_page/(:any)'] = 'Admin_controller/edit_sale_page/$1';
-$route['admin/edit_sale_page_process'] = 'Admin_controller/edit_sale_page_process';
+$route['admin/edit_sale_page/(:any)'] = 'Admin_sale_controller/edit_sale_page/$1';
+$route['admin/edit_sale_page_process'] = 'Admin_sale_controller/edit_sale_page_process';
 
 /*
 *   API
