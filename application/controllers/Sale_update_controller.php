@@ -169,7 +169,6 @@ class Sale_update_controller extends CI_Controller {
 
     public function cronjob_from_database()
     {
-
         $key = $_GET['key'];
 
         $secret_key = '70ASD12@S2452SA45227CDEFEEE70A0B2A12';
@@ -188,48 +187,46 @@ class Sale_update_controller extends CI_Controller {
 
         if(!$result)
         {
-            exit();
+          exit();
         }
 
         $html = file_get_html($result->url);
 
-
         $data = array(
-            'product'   =>  $result->product,
-            'store'     =>  $result->store,
-
-            'num'   =>  $this->remove_parentheses($html->find($result->xpath, 0)->plaintext),
-            'sale_campaign_id' =>   $result->sale_campaign_id
+          'product'   =>  $result->product,
+          'store'     =>  $result->store,
+          'num'       =>  $this->remove_parentheses($html->find($result->xpath, 0)->plaintext),
+          'sale_campaign_id' =>   $result->sale_campaign_id
         );
 
         if($data['num'] == 0)
         {
-            //Finns inga produkter på REA - Sätter kampanjen till inaktiv
-            $this->sale_update_model->set_sale_campain_inactive($data);
+          //Finns inga produkter på REA - Sätter kampanjen till inaktiv
+          $this->sale_update_model->set_sale_campain_inactive($data);
 
-            $data_api_log = array(
-                'product'       =>  $data['product'],
-                'num_products'  =>  0,
-                'status'        =>  0,
-                'store'         =>  $data['store'],
-                'date'          =>  date('Y-m-d')
-            );
+          $data_api_log = array(
+            'product'       =>  $data['product'],
+            'num_products'  =>  0,
+            'status'        =>  0,
+            'store'         =>  $data['store'],
+            'date'          =>  date('Y-m-d')
+          );
 
-            $this->sale_update_model->log_api($data_api_log);
+          $this->sale_update_model->log_api($data_api_log);
         }
         else
         {
-            $data_api_log = array(
-                'product'       =>  $data['product'],
-                'num_products'  =>  $data['num'],
-                'status'        =>  1,
-                'store'         =>  $data['store'],
-                'date'          =>  date('Y-m-d')
-            );
+          $data_api_log = array(
+            'product'       =>  $data['product'],
+            'num_products'  =>  $data['num'],
+            'status'        =>  1,
+            'store'         =>  $data['store'],
+            'date'          =>  date('Y-m-d')
+          );
 
-            $this->sale_update_model->log_api($data_api_log);
+          $this->sale_update_model->log_api($data_api_log);
 
-            $this->sale_update_model->update_sale_data($data);
+          $this->sale_update_model->update_sale_data($data);
         }
 
         $this->sale_update_model->update_last_update($result->cronjob_id);

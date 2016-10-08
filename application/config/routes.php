@@ -49,7 +49,7 @@ $route['admin/index'] = 'Admin_controller/index';
 $route['admin/sale_overview'] = 'Admin_sale_controller/sale_overview';
 $route['admin/offer_overview'] = 'Admin_offer_controller/offer_overview';
 $route['admin/store_overview'] = 'Admin_controller/store_overview';
-$route['admin/coupons_overview'] = 'Admin_controller/coupons_overview';
+$route['admin/coupons_overview'] = 'Admin_coupon_controller/coupons_overview';
 
 /* Admin - Cronjob */
 $route['admin/new_cronjob'] = 'Admin_controller/new_cronjob';
@@ -84,16 +84,16 @@ $route['admin/add_subcategory'] = 'Admin_controller/add_subcategory';
 $route['admin/add_subcategory_process'] = 'Admin_controller/add_subcategory_process';
 
 /* Admin - Add coupon */
-$route['admin/add_coupon'] = 'Admin_controller/add_coupon';
-$route['admin/add_coupon_process'] = 'Admin_controller/add_coupon_process';
+$route['admin/add_coupon'] = 'Admin_coupon_controller/add_coupon';
+$route['admin/add_coupon_process'] = 'Admin_coupon_controller/add_coupon_process';
 
 /* Admin - Add offer */
 $route['admin/add_offer'] = 'Admin_offer_controller/add_offer';
 $route['admin/add_offer_process'] = 'Admin_offer_controller/add_offer_process';
 
 /* Admin - Edit coupon */
-$route['admin/edit_coupon/(:any)'] = 'Admin_controller/edit_coupon/$1';
-$route['admin/edit_coupon_process'] = 'Admin_controller/edit_coupon_process';
+$route['admin/edit_coupon/(:any)'] = 'Admin_coupon_controller/edit_coupon/$1';
+$route['admin/edit_coupon_process'] = 'Admin_coupon_controller/edit_coupon_process';
 
 /* Admin - Edit offer */
 $route['admin/edit_offer/(:any)'] = 'Admin_offer_controller/edit_offer/$1';

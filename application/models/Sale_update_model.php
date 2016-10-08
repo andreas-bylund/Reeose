@@ -23,14 +23,14 @@ class Sale_update_model extends CI_Model  {
 
     public function fetch_cronjob($today)
     {
-        $this->db->select('*');
-        $this->db->where('last_update <', $today);
-        $this->db->limit(1);
-        $this->db->from('cronjobs');
+      $this->db->select('*');
+      $this->db->where('last_update <', $today);
+      $this->db->limit(1);
+      $this->db->from('cronjobs');
 
-        $query = $this->db->get();
+      $query = $this->db->get();
 
-        return $query->row();
+      return $query->row();
     }
 
     public function update_last_update($cronjob_id)

@@ -58,6 +58,7 @@ class admin_model extends CI_Model  {
     * Admin_offer_controller/add_offer_process
     * Admin_sale_controller/add_sale_page_process
     * Admin_sale_controller/add_sale_campaign_process
+    * Admin_sale_controller/add_coupon_process
     */
     public function add_data($data, $tabel)
     {
@@ -108,6 +109,7 @@ class admin_model extends CI_Model  {
 
     /*
     * Hämtar url baserad på ID
+    * Admin_coupon_controller/add_coupon_process
     */
     public function fetch_store_url($id)
     {
@@ -151,6 +153,7 @@ class admin_model extends CI_Model  {
     * Admin_offer_controller/add_offer
     * Admin_sale_controller/add_sale_campaign
     * Admin_sale_controller/edit_sale_page
+    * Admin_sale_controller/edit_coupon
     */
     public function dropdown_fetch_all_stores()
     {
@@ -342,6 +345,7 @@ class admin_model extends CI_Model  {
 
     /**
     * Uppdatera "Uppdaterad" - För rabattkoder
+    * Admin_coupon_controller/add_coupon_process
     */
     public function update_data($data)
     {
@@ -389,6 +393,7 @@ class admin_model extends CI_Model  {
     /**
     * Hämtar rabattkodinformation som ska Ändras
     * Används för reeo.se/admin/edit/:num
+    * Admin_coupon_controller/edit_coupon
     */
     public function fetch_coupon_edit($coupon_id)
     {
@@ -403,6 +408,7 @@ class admin_model extends CI_Model  {
         coupons.featured_home,
         stores.name
       ');
+
       $this->db->from('coupons');
       $this->db->where('coupons.coupon_id', $coupon_id);
       $this->db->join('slugs', 'coupons.store_id = slugs.store_id');
@@ -565,6 +571,7 @@ class admin_model extends CI_Model  {
     /**
     * Uppdatera link_routing - Campaigns
     * Admin_sale_controller/add_sale_campaign_process
+    * Admin_sale_controller/add_coupon_process
     */
     public function update_link_routing_campaign($data, $id)
     {
@@ -585,6 +592,7 @@ class admin_model extends CI_Model  {
     * Uppdatera link_routing - EPI
     * Admin_offer_controller/add_offer_process
     * Admin_sale_controller/add_sale_campaign_process
+    * Admin_sale_controller/add_coupon_process
     */
     public function update_link_routing_epi($data, $id)
     {
@@ -594,6 +602,7 @@ class admin_model extends CI_Model  {
 
     /**
     * Uppdatera rabattkod
+    * Admin_coupon_controller/edit_coupon_process
     */
     public function update_coupon($data, $id)
     {
