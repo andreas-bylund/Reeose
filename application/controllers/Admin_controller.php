@@ -526,6 +526,7 @@ class Admin_controller extends CI_Controller {
         redirect('admin/add_offer');
     } */
 
+    /*
     public function add_coupon()
     {
         $data['title'] = 'Add coupon';
@@ -595,166 +596,165 @@ class Admin_controller extends CI_Controller {
         redirect('admin/add_coupon');
     }
 
+    */
     public function add_category()
     {
-
-        $data['rubrik'] = 'Lägg till ny Kategori';
-        $data['title'] = 'Add kategori';
-        $this->template->load('templates/admin_template', 'admin/add_category', $data);
+      $data['rubrik'] = 'Lägg till ny Kategori';
+      $data['title'] = 'Add kategori';
+      $this->template->load('templates/admin_template', 'admin/add_category', $data);
     }
 
     public function add_category_process()
     {
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data = array(
-            'cat_name'  =>  $this->input->post('category'),
-            'slug_cat_name' =>  $this->swe_characters($this->input->post('category'))
-        );
+      $data = array(
+        'cat_name'  =>  $this->input->post('category'),
+        'slug_cat_name' =>  $this->swe_characters($this->input->post('category'))
+      );
 
-        $this->admin_model->add_data($data, 'all_categories');
+      $this->admin_model->add_data($data, 'all_categories');
 
-        $this->session->set_flashdata('msg', 'Kategorin är nu tillagd');
+      $this->session->set_flashdata('msg', 'Kategorin är nu tillagd');
 
-        redirect('admin/add_category');
+      redirect('admin/add_category');
     }
 
     public function add_subcategory()
     {
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data['rubrik'] = 'Lägg till ny Sub-kategori';
+      $data['rubrik'] = 'Lägg till ny Sub-kategori';
 
-        $data['title'] = 'Add Sub-kategori';
+      $data['title'] = 'Add Sub-kategori';
 
-        $data['categories'] = $this->admin_model->fetch_all_categories();
+      $data['categories'] = $this->admin_model->fetch_all_categories();
 
-
-        $this->template->load('templates/admin_template', 'admin/add_subcategory', $data);
+      $this->template->load('templates/admin_template', 'admin/add_subcategory', $data);
     }
 
     public function add_subcategory_process()
     {
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data = array(
-            'head_category_id'  => $this->input->post('category'),
-            'subcat_name'       =>  $this->input->post('subcategory'),
-            'slug_subcat_name'  =>  $this->swe_characters($this->input->post('subcategory'))
-        );
+      $data = array(
+        'head_category_id'  => $this->input->post('category'),
+        'subcat_name'       =>  $this->input->post('subcategory'),
+        'slug_subcat_name'  =>  $this->swe_characters($this->input->post('subcategory'))
+      );
 
-        $test = $this->admin_model->add_data($data, 'all_subcategories');
+      $test = $this->admin_model->add_data($data, 'all_subcategories');
 
-        $this->session->set_flashdata('msg', 'Kategorin är nu tillagd');
+      $this->session->set_flashdata('msg', 'Kategorin är nu tillagd');
 
-        redirect('admin/add_subcategory');
+      redirect('admin/add_subcategory');
     }
 
     public function add_store()
     {
-        $data['title'] = 'Add store';
+      $data['title'] = 'Add store';
 
-        $data['rubrik'] = 'Lägg till ny Butik';
+      $data['rubrik'] = 'Lägg till ny Butik';
 
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data['categories'] = $this->admin_model->fetch_all_categories();
+      $data['categories'] = $this->admin_model->fetch_all_categories();
 
-        $data['subcategories'] = $this->admin_model->fetch_all_subcategories();
+      $data['subcategories'] = $this->admin_model->fetch_all_subcategories();
 
-        $this->template->load('templates/admin_template', 'admin/add_store', $data);
+      $this->template->load('templates/admin_template', 'admin/add_store', $data);
     }
 
     public function add_store_process()
     {
-        $this->load->model('admin_model');
-        $today = date("Y-m-d");
+      $this->load->model('admin_model');
+      $today = date("Y-m-d");
 
-        //Ladda upp LOGON
-        $config['upload_path'] = './img/logos';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '2048';
-		$config['max_width']  = '250';
-		$config['max_height']  = '250';
-        $config['create_thumb'] = TRUE;
-		$config['file_name'] = $this->random_string_generator();
+      //Ladda upp LOGON
+      $config['upload_path'] = './img/logos';
+	    $config['allowed_types'] = 'gif|jpg|png';
+  		$config['max_size']	= '2048';
+  		$config['max_width']  = '250';
+  		$config['max_height']  = '250';
+      $config['create_thumb'] = TRUE;
+	    $config['file_name'] = $this->random_string_generator();
 
-		$this->load->library('upload', $config);
+	    $this->load->library('upload', $config);
 
-		//Error, något blev fel med bilden.
-		if (!$this->upload->do_upload('logo'))
-		{
-			$error = array('error' => $this->upload->display_errors());
+  		//Error, något blev fel med bilden.
+  		if (!$this->upload->do_upload('logo'))
+  		{
+        $error = array('error' => $this->upload->display_errors());
 
-			$this->template->load('templates/admin_template', 'admin/add_store', $error);
-		}
+        $this->template->load('templates/admin_template', 'admin/add_store', $error);
+	    }
 
-        $content_data = array(
-            'lead_text'     =>  $this->input->post('lead_text'),
-            'bottom_text'   =>  $this->input->post('bottom_text')
-        );
+      $content_data = array(
+        'lead_text'     =>  $this->input->post('lead_text'),
+        'bottom_text'   =>  $this->input->post('bottom_text')
+      );
 
-        $content_data_id = $this->admin_model->add_data($content_data, 'content');
+      $content_data_id = $this->admin_model->add_data($content_data, 'content');
 
-        $header_data = array(
-            'meta_description'  =>  $this->input->post('meta_des'),
-            'meta_tags'         =>  $this->input->post('meta_tag'),
-            'title'             =>  $this->input->post('title')
-        );
+      $header_data = array(
+        'meta_description'  =>  $this->input->post('meta_des'),
+        'meta_tags'         =>  $this->input->post('meta_tag'),
+        'title'             =>  $this->input->post('title')
+      );
 
-        $header_data_id = $this->admin_model->add_data($header_data, 'header_data');
+      $header_data_id = $this->admin_model->add_data($header_data, 'header_data');
 
 
-        $link_routing_data = array(
-            'epi'   =>  'homelink',
-            'type'  =>  'homelink',
-        );
+      $link_routing_data = array(
+        'epi'   =>  'homelink',
+        'type'  =>  'homelink',
+      );
 
-        $link_routing_id = $this->admin_model->add_data($link_routing_data, 'link_routing');
+      $link_routing_id = $this->admin_model->add_data($link_routing_data, 'link_routing');
 
-        $store_data = array(
-            'name'              =>  $this->input->post('name'),
-            'store_logo'        => 'img/logos/' . $this->upload->data('file_name'),
-            'url'               =>  $this->input->post('url'),
-            'link_routing_id'   =>  $link_routing_id,
-            'content_id'        =>  $content_data_id,
-            'header_id'         =>  $header_data_id,
-            'online'            =>  1,
-            'coupons'           =>  $this->input->post('coupons'),
-            'affiliate_link'    =>  $this->input->post('affiliate_url'),
-            'affiliate_img'     =>  $this->input->post('affiliate_img')
-        );
+      $store_data = array(
+        'name'              =>  $this->input->post('name'),
+        'store_logo'        => 'img/logos/' . $this->upload->data('file_name'),
+        'url'               =>  $this->input->post('url'),
+        'link_routing_id'   =>  $link_routing_id,
+        'content_id'        =>  $content_data_id,
+        'header_id'         =>  $header_data_id,
+        'online'            =>  1,
+        'coupons'           =>  $this->input->post('coupons'),
+        'affiliate_link'    =>  $this->input->post('affiliate_url'),
+        'affiliate_img'     =>  $this->input->post('affiliate_img')
+      );
 
-        $store_id = $this->admin_model->add_data($store_data, 'stores');
+      $store_id = $this->admin_model->add_data($store_data, 'stores');
 
-        $categories_data = array(
-            'store_id'          =>  $store_id,
-            'category_id'       =>  $this->input->post('category'),
-            'subcategory_id'    =>  $this->input->post('subcategory')
-        );
+      $categories_data = array(
+        'store_id'          =>  $store_id,
+        'category_id'       =>  $this->input->post('category'),
+        'subcategory_id'    =>  $this->input->post('subcategory')
+      );
 
-        $categories_data_id = $this->admin_model->add_data($categories_data, 'store_categories');
+      $categories_data_id = $this->admin_model->add_data($categories_data, 'store_categories');
 
-        //Slug data
-        $slug_data = array(
-            'store_id'      =>  $store_id,
-            'slug'          =>  $this->input->post('slug'),
-            'slug_category' =>  'rabattkod'
-        );
+      //Slug data
+      $slug_data = array(
+        'store_id'      =>  $store_id,
+        'slug'          =>  $this->input->post('slug'),
+        'slug_category' =>  'rabattkod'
+      );
 
-        $this->admin_model->add_data($slug_data, 'slugs');
+      $this->admin_model->add_data($slug_data, 'slugs');
 
-        //Uppdatera offers med link_routing_id
-        $update_data = array(
-            'store_id'      =>  $store_id,
-            'target_url'    =>  $this->input->post('url')
-        );
+      //Uppdatera offers med link_routing_id
+      $update_data = array(
+        'store_id'      =>  $store_id,
+        'target_url'    =>  $this->input->post('url')
+      );
 
-        $this->admin_model->update_link_routing_store($update_data, $link_routing_id);
+      $this->admin_model->update_link_routing_store($update_data, $link_routing_id);
 
-        $this->session->set_flashdata('msg', 'Butiken är nu tillagd');
+      $this->session->set_flashdata('msg', 'Butiken är nu tillagd');
 
-        redirect('admin/add_store');
+      redirect('admin/add_store');
     }
 
     /*
@@ -827,159 +827,152 @@ class Admin_controller extends CI_Controller {
 
     public function edit_store($store_id)
     {
-        $data['title'] = 'Edit store';
+      $data['title'] = 'Edit store';
 
-        $data['rubrik'] = 'Ändra butik';
+      $data['rubrik'] = 'Ändra butik';
 
-        $this->load->model('admin_model');
-        $this->load->model('public_model');
+      $this->load->model('admin_model');
+      $this->load->model('public_model');
 
-        $data['categories'] = $this->admin_model->fetch_all_categories();
+      $data['categories'] = $this->admin_model->fetch_all_categories();
 
-        $data['product_info'] = $this->admin_model->fetch_store_edit($store_id);
+      $data['product_info'] = $this->admin_model->fetch_store_edit($store_id);
 
-        $data['store_id'] = $store_id;
+      $data['store_id'] = $store_id;
 
-        $this->template->load('templates/admin_template', 'admin/edit_store', $data);
+      $this->template->load('templates/admin_template', 'admin/edit_store', $data);
     }
 
     public function edit_store_process()
     {
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $content_data = array(
-            'lead_text'     =>  $this->input->post('lead_text'),
-            'bottom_text'   =>  $this->input->post('bottom_text')
-        );
+      $content_data = array(
+        'lead_text'     =>  $this->input->post('lead_text'),
+        'bottom_text'   =>  $this->input->post('bottom_text')
+      );
 
-        $this->admin_model->update_edit_content($content_data, $this->input->post('content_id'));
+      $this->admin_model->update_edit_content($content_data, $this->input->post('content_id'));
 
-        $header_data = array(
-            'meta_description'  =>  $this->input->post('meta_des'),
-            'meta_tags'         =>  $this->input->post('meta_tag'),
-            'title'             =>  $this->input->post('title')
-        );
+      $header_data = array(
+        'meta_description'  =>  $this->input->post('meta_des'),
+        'meta_tags'         =>  $this->input->post('meta_tag'),
+        'title'             =>  $this->input->post('title')
+      );
 
-        $this->admin_model->update_edit_header($header_data, $this->input->post('header_data_id'));
+      $this->admin_model->update_edit_header($header_data, $this->input->post('header_data_id'));
 
-        $store_data = array(
-            'name'              =>  $this->input->post('name'),
-            'url'               =>  $this->input->post('url'),
-            'online'            =>  1,
-            'coupons'           =>  $this->input->post('coupons'),
-            'affiliate_link'    =>  $this->input->post('affiliate_url'),
-            'affiliate_img'     =>  $this->input->post('affiliate_img'),
-            'featured'          =>  $this->input->post('featured')
-        );
+      $store_data = array(
+        'name'              =>  $this->input->post('name'),
+        'url'               =>  $this->input->post('url'),
+        'online'            =>  1,
+        'coupons'           =>  $this->input->post('coupons'),
+        'affiliate_link'    =>  $this->input->post('affiliate_url'),
+        'affiliate_img'     =>  $this->input->post('affiliate_img'),
+        'featured'          =>  $this->input->post('featured')
+      );
 
-        $this->admin_model->update_edit_stores($store_data, $this->input->post('store_id'));
+      $this->admin_model->update_edit_stores($store_data, $this->input->post('store_id'));
 
-        $categories_data = array(
-            'category_id'       =>  $this->input->post('category'),
-            'subcategory_id'    =>  $this->input->post('subcategory')
-        );
+      $categories_data = array(
+        'category_id'       =>  $this->input->post('category'),
+        'subcategory_id'    =>  $this->input->post('subcategory')
+      );
 
-        $this->admin_model->update_edit_categories($categories_data, $this->input->post('store_id'));
+      $this->admin_model->update_edit_categories($categories_data, $this->input->post('store_id'));
 
-        //Slug data
-        $slug_data = array(
-            'slug'          =>  $this->input->post('slug'),
-        );
+      //Slug data
+      $slug_data = array(
+        'slug'          =>  $this->input->post('slug'),
+      );
 
-        $this->admin_model->update_edit_slugs($slug_data, $this->input->post('store_id'));
+      $this->admin_model->update_edit_slugs($slug_data, $this->input->post('store_id'));
 
-        //Uppdatera offers med link_routing_id
-        $update_data = array(
-            'target_url'    =>  $this->input->post('url')
-        );
+      //Uppdatera offers med link_routing_id
+      $update_data = array(
+        'target_url'    =>  $this->input->post('url')
+      );
 
-        $this->admin_model->update_edit_linkrouting($update_data, $this->input->post('link_routing_id'));
+      $this->admin_model->update_edit_linkrouting($update_data, $this->input->post('link_routing_id'));
 
-        $this->session->set_flashdata('msg', 'Butiken är nu uppdaterad');
+      $this->session->set_flashdata('msg', 'Butiken är nu uppdaterad');
 
-        redirect('admin/edit_store/' . $this->input->post('store_id'));
+      redirect('admin/edit_store/' . $this->input->post('store_id'));
     }
 
+    /*
     public function edit_coupon($coupon_id)
     {
-        $data['title'] = 'Ändra rabattkod';
+      $data['title'] = 'Ändra rabattkod';
 
-        $data['rubrik'] = 'Ändra rabattkod';
+      $data['rubrik'] = 'Ändra rabattkod';
 
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data['stores'] = $this->admin_model->dropdown_fetch_all_stores();
+      $data['stores'] = $this->admin_model->dropdown_fetch_all_stores();
 
-        $data['coupon_info'] = $this->admin_model->fetch_coupon_edit($coupon_id);
+      $data['coupon_info'] = $this->admin_model->fetch_coupon_edit($coupon_id);
 
-        $data['coupon_id'] = $coupon_id;
+      $data['coupon_id'] = $coupon_id;
 
-        $this->template->load('templates/admin_template', 'admin/edit_coupon', $data);
+      $this->template->load('templates/admin_template', 'admin/edit_coupon', $data);
     }
 
     public function edit_coupon_process()
     {
-        $this->load->model('admin_model');
+      $this->load->model('admin_model');
 
-        $data = array(
-            'coupon_id'     =>  $this->input->post('coupon_id'),
-            'code'          =>  $this->input->post('code'),
-            'end_date'      =>  $this->input->post('end_date'),
-            'title'         =>  $this->input->post('title'),
-            'text'          =>  $this->input->post('text'),
-            'active'        =>  $this->input->post('active'),
-            'featured_home' =>  $this->input->post('featured_home')
-        );
+      $data = array(
+        'coupon_id'     =>  $this->input->post('coupon_id'),
+        'code'          =>  $this->input->post('code'),
+        'end_date'      =>  $this->input->post('end_date'),
+        'title'         =>  $this->input->post('title'),
+        'text'          =>  $this->input->post('text'),
+        'active'        =>  $this->input->post('active'),
+        'featured_home' =>  $this->input->post('featured_home')
+      );
 
-        $this->admin_model->update_coupon($data, $this->input->post('coupon_id'));
+      $this->admin_model->update_coupon($data, $this->input->post('coupon_id'));
 
-        $this->session->set_flashdata('msg', 'Rabattkoden är nu uppdaterad');
+      $this->session->set_flashdata('msg', 'Rabattkoden är nu uppdaterad');
 
-        redirect('admin/edit_coupon/' . $this->input->post('coupon_id'));
+      redirect('admin/edit_coupon/' . $this->input->post('coupon_id'));
     }
-
-	function random_string_generator()
-	{
-		$string = md5(uniqid(rand(), true));
-		return $string;
-	}
+    */
+  	function random_string_generator()
+  	{
+  		$string = md5(uniqid(rand(), true));
+  		return $string;
+  	}
 
     public function logout()
     {
-        $this->authentication->logout();
+      $this->authentication->logout();
 
-        redirect('/');
+      redirect('/');
     }
 
     public function test()
     {
 
-        $this->load->library('Simple_html_dom');
-        $html = file_get_html('http://www.ellos.se/rea/skor');
+      $this->load->library('Simple_html_dom');
+      $html = file_get_html('http://www.ellos.se/rea/skor');
 
-        $num_women_shoes = $html->find('//*[@id="GenderDepartment"]/li/ul/li[1]/span', 0)->plaintext;
+      $num_women_shoes = $html->find('//*[@id="GenderDepartment"]/li/ul/li[1]/span', 0)->plaintext;
 
-        $num_women_shoes = str_replace("(","", $num_women_shoes);
-        $num_women_shoes = str_replace(")","", $num_women_shoes);
-        echo $num_women_shoes;
+      $num_women_shoes = str_replace("(","", $num_women_shoes);
+      $num_women_shoes = str_replace(")","", $num_women_shoes);
 
-
-
-
-
+      echo $num_women_shoes;
 
         //$elems = $xpath->query("//*[@id='GenderDepartment']/li/ul/li[1]/span/text()");
-
-
-
-
     }
 
     private function remove_Parentheses($string)
     {
-        $string = str_replace("(","", $string);
-        $string = str_replace(")","", $string);
+      $string = str_replace("(","", $string);
+      $string = str_replace(")","", $string);
 
-        return $string;
+      return $string;
     }
 }

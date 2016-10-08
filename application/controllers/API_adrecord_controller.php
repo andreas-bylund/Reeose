@@ -5,7 +5,6 @@ class API_adrecord_controller extends CI_Controller {
 
     public function fetch_stores()
     {
-
         $key = $_GET['key'];
 
         $secret_key = '70C75240DAE7C28ECEF082CDF866768E84429579D1F45227CDEFEEE70A0B2A12';

@@ -14,7 +14,7 @@ class Admin_offer_controller extends CI_Controller {
     //Check if user logged in or not
     if (!$this->authentication->is_loggedin())
     {
-        redirect('/');
+      redirect('/');
     }
   }
 
@@ -96,6 +96,7 @@ class Admin_offer_controller extends CI_Controller {
 
     $this->template->load('templates/admin_template', 'admin/add_offer', $data);
   }
+
   /*
   * Lägg till nytt erbjudande - Process
   */
@@ -142,5 +143,4 @@ class Admin_offer_controller extends CI_Controller {
 
     redirect('admin/add_offer');
   }
-
 }

@@ -89,6 +89,9 @@ class Admin_sale_controller extends CI_Controller {
     redirect('admin/edit_sale_page/' . $this->input->post('sale_campaign_id'));
   }
 
+  /*
+  * Lägg till REA-sida
+  */
   public function add_sale_page()
   {
     $data['title'] = 'Add Rea';
@@ -101,6 +104,9 @@ class Admin_sale_controller extends CI_Controller {
     $this->template->load('templates/admin_template', 'admin/add_sale_page', $data);
   }
 
+  /*
+  * Lägg till REA-sida - Process
+  */
   public function add_sale_page_process()
   {
 
@@ -172,18 +178,26 @@ class Admin_sale_controller extends CI_Controller {
     redirect('admin/add_sale_page');
   }
 
+  /*
+  * Lägg till REA-kampanj
+  */
   public function add_sale_campaign()
   {
     $data['title'] = 'Add REA Kampanj';
     $data['rubrik'] = 'Lägg till ny REA-kampanj';
 
+    //Hämtar butiker som används till dropdowns
     $data['stores'] = $this->admin_model->dropdown_fetch_all_stores();
 
+    //Hämtar sale-pages som används till dropdowns
     $data['sale_pages'] = $this->admin_model->dropdown_fetch_all_sale_pages();
 
     $this->template->load('templates/admin_template', 'admin/add_sale_campaign', $data);
   }
 
+  /*
+  * Lägg till REA-kampanj - Process
+  */
   public function add_sale_campaign_process()
   {
     //Link rounting
@@ -226,6 +240,9 @@ class Admin_sale_controller extends CI_Controller {
     redirect('admin/add_sale_campaign');
   }
 
+  /*
+  * Ranom string generator
+  */
   function random_string_generator()
   {
     $string = md5(uniqid(rand(), true));
