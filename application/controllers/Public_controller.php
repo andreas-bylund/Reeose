@@ -208,40 +208,47 @@ class Public_controller extends CI_Controller
         $page_id = $this->public_model->check_if_slug_exists($segment_1, $segment_2);
 
         //Om det inte finns någon matchande slug, 404!
-        if (!$page_id) {
-            show_404();
+        if (!$page_id)
+        {
+          show_404();
         }
 
         //Hämta information om REA-sidan
         $data['page_info'] = $this->public_model->fetch_sale_page($page_id);
 
         //Kontrollerar om sidan är en "Huvudsida", eller en undersida
-        if ($data['page_info']->subcategory_id == 0) {
-            //Det är en Huvudsida
-            $result = $this->public_model->check_if_any_subcat($data['page_info']->category_id);
+        if ($data['page_info']->subcategory_id == 0)
+        {
+          //Det är en Huvudsida
+          $result = $this->public_model->check_if_any_subcat($data['page_info']->category_id);
 
-            if ($result) {
-                //Hämta namn på kategorin på nuvarande sidan
-                $current_category_name = $this->public_model->category_name_by_id($data['page_info']->category_id);
+          if($result)
+          {
+            //Hämta namn på kategorin på nuvarande sidan
+            $current_category_name = $this->public_model->category_name_by_id($data['page_info']->category_id);
 
-                foreach ($result as $row) {
-                    $array_data[] = array(
-                        'current_cat' => $current_category_name->cat_name,
-                        'swe_nisch' => $this->swe_characters($row->nisch),
-                        'nisch' => $row->nisch,
-                     );
-                }
-
-                $data['subcategories'] = $array_data;
+            foreach ($result as $row)
+            {
+              $array_data[] = array(
+                'current_cat' => $current_category_name->cat_name,
+                'swe_nisch'   => $this->swe_characters($row->nisch),
+                'nisch'       => $row->nisch,
+             );
             }
+
+            $data['subcategories'] = $array_data;
+          }
         }
 
         //Hämtar antal rabattkoder som är AKTIVA
         $data['num_active_sale'] = $this->public_model->num_active_sales($page_id, $today);
 
+        
+
         //Om AKTIVA rabattkoder är över 0 så hämtar vi alla aktiva rabattkoder
-        if ($data['num_active_sale'] > 0) {
-            $data['all_active_sale'] = $this->public_model->fetch_active_sales($page_id, $today);
+        if ($data['num_active_sale'] > 0)
+        {
+          $data['all_active_sale'] = $this->public_model->fetch_active_sales($page_id, $today);
         }
 
         //Hämtar totalta antalet produkter på rean.
@@ -277,8 +284,9 @@ class Public_controller extends CI_Controller
         $cat_result = $this->public_model->get_cat_id_by_name(strtolower($category));
         $subcat_result = $this->public_model->get_subcat_id_by_name(strtolower($subcategory));
 
-        if (!$cat_result or !$subcat_result) {
-            show_404();
+        if (!$cat_result or !$subcat_result)
+        {
+          show_404();
         }
 
         $cat_id = $cat_result->all_categories_id;

@@ -586,15 +586,16 @@ class public_model extends CI_Model  {
     */
     public function num_active_sales($store_id, $date)
     {
-        $this->db->where('sale_page_id', $store_id);
-        $this->db->group_start();
-        $this->db->where('end_date >=', $date);
-        $this->db->or_where('end_date', '0000-00-00');
-        $this->db->group_end();
+      $this->db->where('sale_page_id', $store_id);
+      $this->db->group_start();
+      $this->db->where('end_date >=', $date);
+      $this->db->or_where('end_date', '0000-00-00');
+      $this->db->group_end();
+      $this->db->where('count_on_sale_page', 1);
 
-        $query = $this->db->get('sale_campaigns');
+      $query = $this->db->get('sale_campaigns');
 
-        return $query->num_rows();
+      return $query->num_rows();
     }
 
     /*
@@ -626,15 +627,15 @@ class public_model extends CI_Model  {
     {
 
         $this->db->select('
-            stores.store_logo,
-            stores.name,
-            sale_campaigns.sale_campaign_id,
-            sale_campaigns.title,
-            sale_campaigns.num_products,
-            sale_campaigns.end_date,
-            sale_campaigns.text,
-            link_routing.clicks,
-            link_routing.link_routing_id
+          stores.store_logo,
+          stores.name,
+          sale_campaigns.sale_campaign_id,
+          sale_campaigns.title,
+          sale_campaigns.num_products,
+          sale_campaigns.end_date,
+          sale_campaigns.text,
+          link_routing.clicks,
+          link_routing.link_routing_id
         ');
 
         $this->db->where('sale_campaigns.sale_page_id', $page_id);
@@ -693,33 +694,34 @@ class public_model extends CI_Model  {
     */
     public function fetch_sale_page($page_id)
     {
-        $this->db->select('
-            sale_pages.nisch,
-            sale_pages.sale_id,
-            sale_pages.header_img,
-            sale_page_header.meta_description,
-            sale_page_header.meta_tags,
-            sale_page_header.title,
-            sale_page_content.lead_text,
-            sale_page_content.bottom_text,
-            sale_categories.category_id,
-            sale_categories.subcategory_id
-        ');
-        $this->db->where('sale_pages.sale_id', $page_id);
-        $this->db->join('sale_page_content', 'sale_pages.content_id = sale_page_content.sale_content_id');
-        $this->db->join('sale_page_header', 'sale_page_header.sale_page_header_id = sale_pages.header_id');
-        $this->db->join('sale_categories', 'sale_categories.page_id = sale_pages.sale_id');
+      $this->db->select('
+        sale_pages.nisch,
+        sale_pages.sale_id,
+        sale_pages.header_img,
+        sale_page_header.meta_description,
+        sale_page_header.meta_tags,
+        sale_page_header.title,
+        sale_page_content.lead_text,
+        sale_page_content.bottom_text,
+        sale_categories.category_id,
+        sale_categories.subcategory_id
+      ');
 
-        $query = $this->db->get('sale_pages');
+      $this->db->where('sale_pages.sale_id', $page_id);
+      $this->db->join('sale_page_content', 'sale_pages.content_id = sale_page_content.sale_content_id');
+      $this->db->join('sale_page_header', 'sale_page_header.sale_page_header_id = sale_pages.header_id');
+      $this->db->join('sale_categories', 'sale_categories.page_id = sale_pages.sale_id');
 
-        if ($query->num_rows() > 0)
-        {
-            return $query->row();
-        }
-        else
-        {
-            return FALSE;
-        }
+      $query = $this->db->get('sale_pages');
+
+      if ($query->num_rows() > 0)
+      {
+        return $query->row();
+      }
+      else
+      {
+        return FALSE;
+      }
     }
 
     /**

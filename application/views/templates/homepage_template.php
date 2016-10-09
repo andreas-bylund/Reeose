@@ -71,7 +71,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="<?php echo base_url('/'); ?>">
-							<img id="logo-header" src="<?php echo base_url('assets/logo.png'); ?>" alt="Reeo.se loggo">
+							<img id="logo-header" width="150px" src="<?php echo base_url('assets/logo.png'); ?>" alt="Reeo.se loggo">
 						</a>
 					</div>
 

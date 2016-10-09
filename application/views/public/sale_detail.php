@@ -38,10 +38,10 @@
                     {
                         echo '<table data-toggle="table" class="table" style="text-align: center;">
                             <thead><tr><th style="text-align: center;">
-                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-shopping-cart"></i> BUTIK</div><div class="fht-cell"></div></th><th style="">
-                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-clock-o"></i> GÄLLER TILL</div><div class="fht-cell"></div></th><th style="">
-                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-cubes"></i> PRODUKTER PÅ REA</div><div class="fht-cell"></div></th><th style="">
-                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-external-link-square"></i> TILL REA</div><div class="fht-cell"></div></th></tr>
+                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-shopping-cart hidden-xs""></i> BUTIK</div><div class="fht-cell"></div></th><th class="hidden-xs" style="">
+                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-clock-o hidden-xs""></i> GÄLLER TILL</div><div class="fht-cell"></div></th><th class="" style="">
+                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-cubes hidden-xs""></i> PRODUKTER PÅ REA</div><div class="fht-cell"></div></th><th style="">
+                                <div class="th-inner" style="text-align: center;"> <i class="fa fa-external-link-square hidden-xs""></i> TILL REA</div><div class="fht-cell"></div></th></tr>
                             </thead>
                         <tbody>';
 
@@ -69,7 +69,7 @@
                                 <td style="">
                                     <img height="91" alt="' .$row->name.' rabattkoder" src="'.base_url($row->store_logo).'" class="attachment-full size-full">
                                 </td>
-                                <td style="vertical-align: middle;"> '.$date.'</td>
+                                <td class="hidden-xs" style="vertical-align: middle;"> '.$date.'</td>
                                 <td class="shipping" style="font-size: 24px; color: #fa471d; font-weight: 700; vertical-align: middle;"> '.$num_products.'</td>
                                 <td style="vertical-align: middle;">
                                     <a href="' .base_url('ut/'.$row->link_routing_id.'').'" rel="nofollow">
